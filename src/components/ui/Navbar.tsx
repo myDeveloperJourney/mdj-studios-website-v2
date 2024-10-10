@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false); // State to control the menu
@@ -69,10 +70,12 @@ export default function Navbar() {
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <img
+                            <Image
                                 className="h-8 w-auto"
                                 src="/images/logo.svg"
                                 alt="MDJ Studios"
+                                height={8}
+                                width={8}
                             />
                         </div>
                         <div className="hidden sm:ml-6 sm:block">

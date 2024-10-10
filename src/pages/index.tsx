@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import Layout from "@/components/layout";
+import Image from 'next/image'; // Import Next.js Image component
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,12 +41,16 @@ export default function Home() {
           Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Service 1 */}
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="/images/software-dev.webp"
-              alt="Software/Web Development"
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative w-full h-64">
+              <Image
+                src="/images/software-dev.webp"
+                alt="Software/Web Development"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold mb-4">
                 Software/Web Development
@@ -58,12 +63,16 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Service 2 */}
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="/images/ux-design.webp"
-              alt="Focused on User Experience"
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative w-full h-64">
+              <Image
+                src="/images/ux-design.webp"
+                alt="Focused on User Experience"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold mb-4">Focused on User Experience</h3>
               <p className="text-gray-700">
@@ -74,12 +83,16 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Service 3 */}
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img
-              src="/images/creative-support.webp"
-              alt="Innovative Creative Support"
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative w-full h-64">
+              <Image
+                src="/images/creative-support.webp"
+                alt="Innovative Creative Support"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold mb-4">
                 Innovative Creative Support
@@ -102,10 +115,12 @@ export default function Home() {
         <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-8">
           {/* Profile Section */}
           <div className="text-center">
-            <img
+            <Image
               src="/images/daniel.jpg" // replace with your image path
               alt="Daniel Scott"
               className="w-48 h-48 rounded-full mx-auto object-cover"
+              width={192} // This value matches 48px * 4 = 192px for a good profile size
+              height={192}
             />
             <h3 className="text-2xl font-bold mt-4">Daniel Scott</h3>
             <p className="text-gray-500">Engineering/Project Manager</p>
