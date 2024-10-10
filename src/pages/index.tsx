@@ -57,7 +57,7 @@ export default function Home() {
                   alt="Software/Web Development"
                   layout="fill"
                   objectFit="cover"
-                  />
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-4">
@@ -79,7 +79,7 @@ export default function Home() {
                   alt="Focused on User Experience"
                   layout="fill"
                   objectFit="cover"
-                  />
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-4">Focused on User Experience</h3>
@@ -99,7 +99,7 @@ export default function Home() {
                   alt="Innovative Creative Support"
                   layout="fill"
                   objectFit="cover"
-                  />
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-4">
@@ -118,7 +118,7 @@ export default function Home() {
         {/* Contact Us Section */}
         <section id="contact" className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Contact Us</h2>
-          
+
           {/* Centered layout for profile and form */}
           <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-8">
             {/* Profile Section */}
@@ -129,7 +129,7 @@ export default function Home() {
                 className="w-48 h-48 rounded-full mx-auto object-cover"
                 width={192} // This value matches 48px * 4 = 192px for a good profile size
                 height={192}
-                />
+              />
               <h3 className="text-2xl font-bold mt-4">Daniel Scott</h3>
               <p className="text-gray-500">Engineering/Project Manager</p>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
               method="POST"
               className="w-full max-w-md"
               data-vercel="true"
-              >
+            >
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
                   Name
@@ -150,7 +150,7 @@ export default function Home() {
                   name="name"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   required
-                  />
+                />
               </div>
 
               <div className="mb-4">
@@ -162,7 +162,7 @@ export default function Home() {
                   name="email"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   required
-                  />
+                />
               </div>
 
               <div className="mb-6">
@@ -174,14 +174,15 @@ export default function Home() {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   rows={5}
                   required
-                  ></textarea>
+                ></textarea>
               </div>
 
               <div className="text-center">
                 <button
                   type="submit"
+                  disabled={true}
                   className="px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300"
-                  >
+                >
                   SEND
                 </button>
               </div>
