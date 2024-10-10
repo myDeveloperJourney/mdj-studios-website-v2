@@ -20,6 +20,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.layout-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
