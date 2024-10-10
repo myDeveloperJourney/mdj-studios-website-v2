@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false); // State to control the menu
@@ -7,7 +7,7 @@ export default function Navbar() {
         setMenuOpen(!menuOpen); // Toggle menu open/close
     };
 
-    const handleSmoothScroll = (e:any, target:any) => {
+    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
         e.preventDefault(); // Prevent default anchor behavior
         const section = document.querySelector(target); // Select the target section
         if (section) {
