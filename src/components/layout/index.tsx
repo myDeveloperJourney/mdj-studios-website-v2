@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Hero from "./HeroBanner";
 import Main from "./Main";
 import Footer from "./Footer";
 import Navbar from "../ui/Navbar";
@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className="layout-container">
             <Navbar />
-            <Header />
+            <Hero />
             <Main>
                 {children}
             </Main>
