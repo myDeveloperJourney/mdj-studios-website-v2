@@ -68,7 +68,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Focused on User Experience</h3>
               <p className="text-gray-700">
                 My team will create a digital experience that engages your
-                audience and motivates your organization, whether it's your
+                audience and motivates your organization, whether it&apos;s your
                 website, web application, or SaaS product.
               </p>
             </div>
