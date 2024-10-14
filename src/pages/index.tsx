@@ -17,12 +17,12 @@ const geistMono = localFont({
 });
 
 export default function Home() {
-  const formId: string = process.env.NEXT_PUBLIC_FORM ?? "";
+  const formId: string = process.env.NEXT_PUBLIC_FORM || "";
 
   if (!formId) {
     console.error("NEXT_PUBLIC_FORM is not defined.");
   }
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
+  const [state, handleSubmit] = useForm(formId);
   const [displaySuccessMessage, setDisplaySuccessMessage] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
