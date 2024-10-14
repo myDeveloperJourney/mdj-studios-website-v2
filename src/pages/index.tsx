@@ -1,7 +1,9 @@
 import localFont from "next/font/local";
 import Layout from "@/components/layout";
-import Image from 'next/image'; // Import Next.js Image component
+import Image from 'next/image';
 import SEO from "@/components/layout/Head";
+import { useForm, ValidationError } from "@formspree/react";
+import React, { useState, useEffect } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,6 +17,37 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+  const formId: string = process.env.NEXT_PUBLIC_FORM || "temp123";
+
+  const [state, handleSubmit] = useForm(formId);
+  const [displaySuccessMessage, setDisplaySuccessMessage] = useState(false);
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setDisplaySuccessMessage(true);
+      setFormState({ name: "", email: "", message: "" });
+    }
+  }, [state.succeeded]);
+
+  useEffect(() => {
+    if (displaySuccessMessage) {
+      const timer = setTimeout(() => {
+        setDisplaySuccessMessage(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [displaySuccessMessage]);
+
   return (
     <>
       <SEO
@@ -114,6 +147,82 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Portfolio Section */}
+        <section id="portfolio" className="max-w-6xl mx-auto px-4 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-left">
+            Portfolio
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://rogerswildlife.org" target="_blank">
+                  <Image
+                    src="/images/rogers-wildlife.jpg"
+                    alt="Roger's Wildlife"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">
+                  Roger&apos;s Wildlife
+                </h3>
+                <p className="text-gray-500 mt-4">
+                  This is a website built for a non-profit bird rescue center.
+                  Built with Next.js and Vercel, it includes donation functionality, an interactive map, a photo gallery,
+                  and content related to the organization&apos;s mission.
+                </p>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://thewrightfenceco.com" target="_blank">
+                  <Image
+                    src="/images/the-wright-fence-co.jpg"
+                    alt="The Wright Fence Co."
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">The Wright Fence Co.</h3>
+                <p className="text-gray-500 mt-4">
+                  Built with Next.js and Netlify, this site includes a services lineup,
+                  carousel, embedded chat, interactive map, and several business-oriented features.
+                </p>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://listingview.io" target="_blank">
+                  <Image
+                    src="/images/listing-view.jpg"
+                    alt="Listing View"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">
+                  Listing View
+                </h3>
+                <p className="text-gray-500 mt-4">
+                  Listing View is a SaaS product providing Etsy sellers insights on successful listings.
+                  We helped the client with authentication, a full-site audit for compliance, and site rebranding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Us Section */}
         <section id="contact" className="max-w-6xl mx-auto px-4 py-16">
@@ -122,7 +231,7 @@ export default function Home() {
           {/* Centered layout for profile and form */}
           <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-8">
             {/* Profile Section */}
-            <div className="text-center">
+            <div className="text-center mt-[18px]">
               <Image
                 src="/images/daniel.jpg" // replace with your image path
                 alt="Daniel Scott"
@@ -136,55 +245,73 @@ export default function Home() {
 
             {/* Form Section */}
             <form
-              action="/api/contact"
-              method="POST"
+              onSubmit={handleSubmit}
               className="w-full max-w-md"
-              data-vercel="true"
             >
+              <div className="text-center mb-6 h-[18px]">
+                {displaySuccessMessage && (
+                  <p className="text-xl text-green-600 font-semibold">
+                    Your message has been sent!
+                  </p>
+                )}
+              </div>
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                   Name
                 </label>
                 <input
+                  onChange={handleChange}
+                  value={formState.name}
+                  id="name"
                   type="text"
                   name="name"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   required
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} />
               </div>
 
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                   Email
                 </label>
                 <input
+                  onChange={handleChange}
+                  value={formState.email}
+                  id="email"
                   type="email"
                   name="email"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   required
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
 
               <div className="mb-6">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
                   Message
                 </label>
                 <textarea
+                  onChange={handleChange}
+                  value={formState.message}
+                  id="message"
                   name="message"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-500"
                   rows={5}
                   required
                 ></textarea>
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               <div className="text-center">
                 <button
                   type="submit"
-                  disabled={true}
+                  disabled={state.submitting}
                   className="px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300"
                 >
                   SEND
                 </button>
+                <ValidationError errors={state.errors} />
               </div>
             </form>
           </div>
