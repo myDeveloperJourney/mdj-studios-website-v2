@@ -114,6 +114,82 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Portfolio Section */}
+        <section id="portfolio" className="max-w-6xl mx-auto px-4 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-left">
+            Portfolio
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://rogerswildlife.org" target="_blank">
+                  <Image
+                    src="/images/rogers-wildlife.jpg"
+                    alt="Roger's Wildlife"
+                    layout="fill"
+                    objectFit="contain" 
+                    />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">
+                  Roger's Wildlife
+                </h3>
+                <p className="text-gray-500 mt-4">
+                  This is a website built for a non-profit bird rescue center.
+                  Built with Next.js and Vercel, it includes donation functionality, an interactive map, a photo gallery,
+                  and content related to the organization’s mission.
+                </p>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://thewrightfenceco.com" target="_blank">
+                  <Image
+                    src="/images/the-wright-fence-co.jpg"
+                    alt="The Wright Fence Co."
+                    layout="fill"
+                    objectFit="contain"
+                    />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">The Wright Fence Co.</h3>
+                <p className="text-gray-500 mt-4">
+                  Built with Next.js and Netlify, this site includes a services lineup,
+                  carousel, embedded chat, interactive map, and several business-oriented features.
+                </p>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
+                <a href="https://listingview.io" target="_blank">
+                  <Image
+                    src="/images/listing-view.jpg"
+                    alt="Listing View"
+                    layout="fill"
+                    objectFit="contain"
+                    />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">
+                  Listing View
+                </h3>
+                <p className="text-gray-500 mt-4">
+                  Listing View is a SaaS product providing Etsy sellers insights on successful listings.
+                  We helped the client with authentication, a full-site audit for compliance, and site rebranding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Us Section */}
         <section id="contact" className="max-w-6xl mx-auto px-4 py-16">
