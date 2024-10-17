@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
 
                         <h2 className="text-2xl font-semibold">4. Communication Preferences</h2>
                         <p>
-                            If you no longer wish to receive communications from us, please reply to your most recent email from us with the phrase "Unsubscribe."
+                            If you no longer wish to receive communications from us, please reply to your most recent email from us with the phrase &quot;Unsubscribe.&quot;
                         </p>
 
                         <h2 className="text-2xl font-semibold">5. Data Security</h2>
