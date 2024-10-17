@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false); // State to control the menu
@@ -7,18 +9,25 @@ export default function Navbar() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen); // Toggle menu open/close
     };
+    
+    const router = useRouter();    
 
     const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
         e.preventDefault(); // Prevent default anchor behavior
-        const section = document.querySelector(target); // Select the target section
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
-            setMenuOpen(false); // Close the menu after click
+
+        if (router.pathname !== "/") {
+            router.push("/" + target);
         } else {
-            console.error(`Section not found: ${target}`); // Log an error if the section is not found
+            const section = document.querySelector(target); // Select the target section
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
+                setMenuOpen(false); // Close the menu after click
+            } else {
+                console.error(`Section not found: ${target}`); // Log an error if the section is not found
+            }
         }
     };
-    
+
 
     return (
         <nav className="bg-gray-800">
@@ -70,38 +79,43 @@ export default function Navbar() {
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <Image
-                                className="h-8 w-auto"
-                                src="/images/logo.svg"
-                                alt="MDJ Studios"
-                                height={8}
-                                width={8}
-                            />
+                            <Link href="/">
+                                <Image
+                                    className="h-8 w-auto"
+                                    src="/images/logo.svg"
+                                    alt="MDJ Studios"
+                                    height={8}
+                                    width={8}
+                                />
+                            </Link>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                {/* <a
-                                    href="#home"
-                                    onClick={(e) => handleSmoothScroll(e, "#home")}
-                                    className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                                    aria-current="page"
-                                >
-                                    Home
-                                </a> */}
-                                <a
-                                    href="#services"
+                                
+                                { router.pathname !== "/" && 
+                                    <Link
+                                        href="/"
+                                        className="rounded-md hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white"
+                                        aria-current="page"
+                                    >
+                                        Home
+                                    </Link>
+                                
+                                }
+                                <Link
+                                    href="/#services"
                                     onClick={(e) => handleSmoothScroll(e, "#services")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Services
-                                </a>
-                                <a
-                                    href="#contact"
+                                </Link>
+                                <Link
+                                    href="/#contact"
                                     onClick={(e) => handleSmoothScroll(e, "#contact")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Contact Us
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
