@@ -93,29 +93,29 @@ export default function Navbar() {
                             <div className="flex space-x-4">
                                 
                                 { router.pathname !== "/" && 
-                                    <a
+                                    <Link
                                         href="/"
                                         className="rounded-md hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white"
                                         aria-current="page"
                                     >
                                         Home
-                                    </a>
+                                    </Link>
                                 
                                 }
-                                <a
+                                <Link
                                     href="/#services"
                                     onClick={(e) => handleSmoothScroll(e, "#services")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Services
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="/#contact"
                                     onClick={(e) => handleSmoothScroll(e, "#contact")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Contact Us
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
