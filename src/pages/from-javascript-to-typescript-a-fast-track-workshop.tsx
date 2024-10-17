@@ -89,7 +89,7 @@ export default function WorkshopPage () {
 
           <h2 className="text-3xl font-semibold mb-6">How to Join</h2>
           <p className="text-lg leading-relaxed mb-6">
-            This workshop will take place online via Zoom. After registering, you'll receive an email with the Zoom link
+            This workshop will take place online via Zoom. After registering, you&apos;ll receive an email with the Zoom link
             and all the necessary details. Make sure to join a few minutes early to get set up!
           </p>
 
