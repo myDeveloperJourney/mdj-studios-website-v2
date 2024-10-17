@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false); // State to control the menu
@@ -70,13 +71,15 @@ export default function Navbar() {
 
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="flex flex-shrink-0 items-center">
-                            <Image
-                                className="h-8 w-auto"
-                                src="/images/logo.svg"
-                                alt="MDJ Studios"
-                                height={8}
-                                width={8}
-                            />
+                            <Link href="/">
+                                <Image
+                                    className="h-8 w-auto"
+                                    src="/images/logo.svg"
+                                    alt="MDJ Studios"
+                                    height={8}
+                                    width={8}
+                                />
+                            </Link>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
