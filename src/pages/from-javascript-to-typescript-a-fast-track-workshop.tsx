@@ -5,7 +5,7 @@ import SEO from '@/components/layout/Head';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function WorkshopPage() {
-  const formId: string = process.env.NEXT_PUBLIC_FORM || 'abc123';
+  const formId: string = process.env.NEXT_PUBLIC_WORKSHOP_FORM || 'abc123';
   const [state, handleSubmit] = useForm(formId);
   const [displaySuccessMessage, setDisplaySuccessMessage] = useState(false);
 
