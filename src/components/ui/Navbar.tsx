@@ -16,7 +16,7 @@ export default function Navbar() {
         e.preventDefault(); // Prevent default anchor behavior
 
         if (router.pathname !== "/") {
-            router.push("/" + target)
+            router.push("/" + target);
         } else {
             const section = document.querySelector(target); // Select the target section
             if (section) {
