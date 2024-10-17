@@ -93,13 +93,14 @@ export default function WorkshopPage () {
             and all the necessary details. Make sure to join a few minutes early to get set up!
           </p>
 
-          <div className="text-center">
+          <h3 className="text-3xl font-semibold mb-6">Stay Tuned for more Information!</h3>
+          {/* <div className="text-center">
             <button
               className="px-6 py-3 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transition duration-300"
             >
               Register Now
             </button>
-          </div>
+          </div> */}
         </section>
       </Layout>
     </>
