@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export default function Home() {
-  const formId: string = process.env.NEXT_PUBLIC_FORM || "temp123";
+  const formId: string = process.env.NEXT_PUBLIC_CONTACT_FORM || "temp123";
 
   const [state, handleSubmit] = useForm(formId);
   const [displaySuccessMessage, setDisplaySuccessMessage] = useState(false);
