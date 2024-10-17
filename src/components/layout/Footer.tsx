@@ -17,6 +17,7 @@ export default function Footer() {
                         </Link>
                     </p>
                 }
+                <br />
                 <p>
                     <a href="#top" className="text-indigo-400 hover:text-indigo-300">
                         Navigate to top
