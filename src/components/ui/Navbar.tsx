@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false); // State to control the menu
@@ -8,18 +9,25 @@ export default function Navbar() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen); // Toggle menu open/close
     };
+    
+    const router = useRouter();    
 
     const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
         e.preventDefault(); // Prevent default anchor behavior
-        const section = document.querySelector(target); // Select the target section
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
-            setMenuOpen(false); // Close the menu after click
+
+        if (router.pathname !== "/") {
+            router.push("/" + target)
         } else {
-            console.error(`Section not found: ${target}`); // Log an error if the section is not found
+            const section = document.querySelector(target); // Select the target section
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
+                setMenuOpen(false); // Close the menu after click
+            } else {
+                console.error(`Section not found: ${target}`); // Log an error if the section is not found
+            }
         }
     };
-    
+
 
     return (
         <nav className="bg-gray-800">
@@ -83,23 +91,26 @@ export default function Navbar() {
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                {/* <a
-                                    href="#home"
-                                    onClick={(e) => handleSmoothScroll(e, "#home")}
-                                    className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                                    aria-current="page"
-                                >
-                                    Home
-                                </a> */}
+                                
+                                { router.pathname !== "/" && 
+                                    <a
+                                        href="/"
+                                        className="rounded-md hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white"
+                                        aria-current="page"
+                                    >
+                                        Home
+                                    </a>
+                                
+                                }
                                 <a
-                                    href="#services"
+                                    href="/#services"
                                     onClick={(e) => handleSmoothScroll(e, "#services")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Services
                                 </a>
                                 <a
-                                    href="#contact"
+                                    href="/#contact"
                                     onClick={(e) => handleSmoothScroll(e, "#contact")}
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
