@@ -1,4 +1,4 @@
-// components/Hero.js
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -20,12 +20,12 @@ export default function Hero() {
                 <p className="text-xl">Innovative Software Solutions</p>
 
                 {/* Contact Button */}
-                <a
+                <Link
                     href="/#contact"
                     className="mt-6 px-6 py-2 bg-black text-white font-semibold hover:bg-gray-700 transition duration-300 rounded-md"
                 >
                     Contact Us
-                </a>
+                </Link>
             </div>
         </div>
     );
