@@ -7,13 +7,16 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 interface LayoutProps {
     children: ReactNode;
+    coverImageSourceURL?: string;
+    articleTitle?: string;
+
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, coverImageSourceURL, articleTitle }) => {
     return (
         <div id="top" className="layout-container">
             <Navbar />
-            <Hero />
+            <Hero coverImageSourceURL={coverImageSourceURL} articleTitle={articleTitle} />
             <Main>
                 {children}
                 <SpeedInsights />
