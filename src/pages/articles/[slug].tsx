@@ -32,7 +32,7 @@ function ArticlePage({ article }: Props) {
   return (
     <>
       <SEO
-        title={article.title}
+        title={`MDJ Studios | Articles: ${article.title}`}
         description={article.excerpt}
         url={`https://mdjstudios.com/articles/${article.title}`}
         image={article.coverImage.url}
@@ -40,6 +40,20 @@ function ArticlePage({ article }: Props) {
 
       <Layout coverImageSourceURL={article.coverImage.url} articleTitle={article.title}>
         <div className="max-w-6xl mx-auto px-4 py-16">
+          {/* Author Section */}
+          <div className="flex items-center mb-8">
+            <img
+              src={article.author.profilePhoto.url}
+              alt={article.author.name}
+              className="w-16 h-16 rounded-full mr-4"
+            />
+            <div>
+              <p className="text-xl font-semibold">{article.author.name}</p>
+              <p className="text-gray-600">{article.author.jobTitle}</p>
+            </div>
+          </div>
+
+          {/* Article Content */}
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="p-6">
               <div className="text-lg">

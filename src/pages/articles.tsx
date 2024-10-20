@@ -11,19 +11,18 @@ interface Article {
   slug: string;
   excerpt: string;
   coverImage: {
-      url: string;
+    url: string;
   };
   author: {
-      name: string;
-      jobTitle: string;
-      profilePhoto: {
-          url: string;
-      };
-  }[];
-};
+    name: string;
+    jobTitle: string;
+    profilePhoto: {
+      url: string;
+    };
+  };
+}
 
-
-function ArticlesPage({ articles }: {articles: Article[]}) {
+function ArticlesPage({ articles }: { articles: Article[] }) {
   return (
     <>
       <SEO
@@ -40,11 +39,8 @@ function ArticlesPage({ articles }: {articles: Article[]}) {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
-              >
+            {articles.map((article) => (
+              <div key={article.slug} className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="relative w-full h-48">
                   <Image
                     src={article.coverImage.url}
@@ -57,15 +53,12 @@ function ArticlesPage({ articles }: {articles: Article[]}) {
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
                   <p className="text-gray-500 text-sm mb-2">
-                    By {article.author[0].name}
+                    By {article.author.name}
                   </p>
                   <p className="text-gray-700 mb-4">
                     {article.excerpt}
                   </p>
-                  <Link
-                    href={article.slug}
-                    className="text-indigo-600 hover:text-indigo-800 font-semibold"
-                  >
+                  <Link className="text-indigo-600 hover:text-indigo-800 font-semibold" href={`/articles/${article.slug}`}>
                     Read more &rarr;
                   </Link>
                 </div>
