@@ -5,12 +5,13 @@ import SEO from "@/components/layout/Head";
 import Layout from "@/components/layout";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { RichTextContent } from "@graphcms/rich-text-types";
+import Image from "next/image";
 
 interface Article {
   title: string;
   excerpt: string;
   content: {
-    raw: RichTextContent; 
+    raw: RichTextContent;
   };
   coverImage: {
     url: string;
@@ -42,9 +43,11 @@ function ArticlePage({ article }: Props) {
         <div className="max-w-6xl mx-auto px-4 py-16">
           {/* Author Section */}
           <div className="flex items-center mb-8">
-            <img
+            <Image
               src={article.author.profilePhoto.url}
               alt={article.author.name}
+              width={64}
+              height={64}
               className="w-16 h-16 rounded-full mr-4"
             />
             <div>
