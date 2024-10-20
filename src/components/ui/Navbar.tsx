@@ -116,6 +116,13 @@ export default function Navbar() {
                                 >
                                     Contact Us
                                 </Link>
+                                <Link
+                                    href="/articles"
+                                    // onClick={(e) => handleSmoothScroll(e, "#contact")}
+                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                                >
+                                    Articles
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -147,6 +154,12 @@ export default function Navbar() {
                     >
                         Contact Us
                     </a>
+                    <Link
+                        href="/articles"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >
+                        Articles
+                    </Link>
                 </div>
             </div>
         </nav>
