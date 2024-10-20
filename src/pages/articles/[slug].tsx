@@ -11,7 +11,7 @@ interface Article {
   title: string;
   excerpt: string;
   content: {
-    raw: RichTextContent;
+    raw: RichTextContent; 
   };
   coverImage: {
     url: string;
@@ -64,10 +64,16 @@ function ArticlePage({ article }: Props) {
                   content={article.content.raw}
                   renderers={{
                     h1: ({ children }) => (
-                      <h1 className="text-3xl font-bold mb-4">{children}</h1>
+                      <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>
                     ),
                     h2: ({ children }) => (
-                      <h2 className="text-2xl font-bold mb-4">{children}</h2>
+                      <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-xl font-bold mt-8 mb-4">{children}</h3>
+                    ),
+                    h4: ({ children }) => (
+                      <h4 className="text-lg font-bold mt-8 mb-4">{children}</h4>
                     ),
                     p: ({ children }) => <p className="mb-4">{children}</p>,
                     bold: ({ children }) => (
@@ -82,7 +88,16 @@ function ArticlePage({ article }: Props) {
                       >
                         {children}
                       </a>
-                    )
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="list-disc list-inside mb-4">{children}</ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="list-decimal list-inside mb-4">{children}</ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="mb-2">{children}</li>
+                    ),
                   }}
                 />
               </div>
