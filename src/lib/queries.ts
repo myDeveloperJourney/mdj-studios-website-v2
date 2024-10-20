@@ -22,10 +22,11 @@ export const GET_ARTICLE_POSTS = gql`
 
 export const GET_ARTICLE_POST = gql`
     query getArticlePost($slug: String!) {
-        article(slug: $slug) {
+        article(where: { slug: $slug }) {
             title
+            excerpt
             content {
-                html
+                raw
             }
             author {
                 name
