@@ -239,7 +239,7 @@ export default function Home() {
                 height={192}
               />
               <h3 className="text-2xl font-bold mt-4">Daniel Scott</h3>
-              <p className="text-gray-500">Engineering/Project Manager</p>
+              <p className="text-gray-500">Owner | Senior Application Developer</p>
             </div>
 
             {/* Form Section */}

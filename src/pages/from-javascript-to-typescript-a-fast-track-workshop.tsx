@@ -113,7 +113,7 @@ export default function WorkshopPage() {
                 className="rounded-full shadow-lg mb-4"
               />
               <h3 className="text-xl font-bold">Daniel Scott</h3>
-              <p className="text-gray-500">Software Engineer & Instructor</p>
+              <p className="text-gray-500">Senior Application Developer</p>
             </div>
 
             <div className="flex flex-col items-center text-center">
