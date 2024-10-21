@@ -1,6 +1,6 @@
-import Layout from '@/components/layout';
-import SEO from '@/components/layout/Head';
-import Image from 'next/image';
+import Layout from "@/components/layout";
+import SEO from "@/components/layout/Head";
+import Image from "next/image";
 
 export default function BioPage() {
   return (
@@ -34,7 +34,7 @@ export default function BioPage() {
             {/* Bio Summary */}
             <div className="text-lg leading-relaxed">
               <p className="mb-6">
-                Daniel is originally from Fort Worth, TX, where he earned a Bachelor's degree in Business Science 
+                Daniel is originally from Fort Worth, TX, where he earned a Bachelor&apos;s degree in Business Science 
                 with a concentration in Finance. After spending a decade in the financial industry, he saw the potential 
                 of software automation to disrupt his role. Determined to stay ahead of the curve, Daniel taught himself software 
                 development over two years, all while finishing his career in finance.
@@ -90,7 +90,7 @@ export default function BioPage() {
             <h3 className="text-2xl font-bold mt-6 mb-4">Education</h3>
             <ul className="list-disc list-inside space-y-2">
               <li>University of Phoenix - Bachelor of Business Science (Finance Concentration) | 2011 - 2015</li>
-              <li>University of Phoenix - Associate's Degree of Arts (Finance Fundamentals) | 2008 - 2010</li>
+              <li>University of Phoenix - Associate&apos;s Degree of Arts (Finance Fundamentals) | 2008 - 2010</li>
               <li>Coding Dojo, Dallas - Full-Stack Software Engineering Certificate | 2017</li>
             </ul>
 
