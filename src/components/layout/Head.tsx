@@ -16,7 +16,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {/* Favicon */}
-      <link rel="icon" href="/images/logo.svg" type="image/svg+xml" />
+      <link rel="icon" href="/images/logo-dark-bg.png" type="image/x-icon" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
