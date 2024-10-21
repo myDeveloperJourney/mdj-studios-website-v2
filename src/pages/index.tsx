@@ -156,6 +156,28 @@ export default function Home() {
             {/* Project 1 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <div className="relative w-full h-64">
+                <a href="https://listingview.io" target="_blank">
+                  <Image
+                    src="/images/listing-view.jpg"
+                    alt="Listing View"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </a>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4">
+                  Listing View
+                </h3>
+                <p className="text-gray-500 mt-4">
+                  Listing View is a SaaS product providing Etsy sellers insights on successful listings.
+                  We helped the client with authentication, a full-site audit for compliance, and site rebranding.
+                </p>
+              </div>
+            </div>
+            {/* Project 2 */}
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div className="relative w-full h-64">
                 <a href="https://rogerswildlife.org" target="_blank">
                   <Image
                     src="/images/rogers-wildlife.jpg"
@@ -177,7 +199,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Project 2 */}
+            {/* Project 3 */}
 
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <div className="relative w-full h-64">
@@ -195,29 +217,6 @@ export default function Home() {
                 <p className="text-gray-500 mt-4">
                   Built with Next.js and Netlify, this site includes a services lineup,
                   carousel, embedded chat, interactive map, and several business-oriented features.
-                </p>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <div className="relative w-full h-64">
-                <a href="https://listingview.io" target="_blank">
-                  <Image
-                    src="/images/listing-view.jpg"
-                    alt="Listing View"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </a>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4">
-                  Listing View
-                </h3>
-                <p className="text-gray-500 mt-4">
-                  Listing View is a SaaS product providing Etsy sellers insights on successful listings.
-                  We helped the client with authentication, a full-site audit for compliance, and site rebranding.
                 </p>
               </div>
             </div>
