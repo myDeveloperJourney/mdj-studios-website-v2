@@ -9,8 +9,8 @@ export default function Navbar() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen); // Toggle menu open/close
     };
-    
-    const router = useRouter();    
+
+    const router = useRouter();
 
     const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
         e.preventDefault(); // Prevent default anchor behavior
@@ -91,8 +91,8 @@ export default function Navbar() {
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                
-                                { router.pathname !== "/" && 
+
+                                {router.pathname !== "/" &&
                                     <Link
                                         href="/"
                                         className="rounded-md hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white"
@@ -100,7 +100,7 @@ export default function Navbar() {
                                     >
                                         Home
                                     </Link>
-                                
+
                                 }
                                 <Link
                                     href="/#services"
@@ -116,13 +116,22 @@ export default function Navbar() {
                                 >
                                     Contact Us
                                 </Link>
-                                <Link
-                                    href="/articles"
-                                    // onClick={(e) => handleSmoothScroll(e, "#contact")}
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                                >
-                                    Articles
-                                </Link>
+                                {router.pathname !== "/articles" &&
+                                    <Link
+                                        href="/articles"
+                                        className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                                    >
+                                        Articles
+                                    </Link>
+                                }
+                                {router.pathname !== "/dans-bio" &&
+                                    <Link
+                                        href="/dans-bio"
+                                        className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                                    >
+                                        About Daniel
+                                    </Link>
+                                }
                             </div>
                         </div>
                     </div>
@@ -154,12 +163,22 @@ export default function Navbar() {
                     >
                         Contact Us
                     </a>
-                    <Link
-                        href="/articles"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                        Articles
-                    </Link>
+                    {router.pathname !== "/articles" &&
+                        <Link
+                            href="/articles"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                            Articles
+                        </Link>
+                    }
+                    {router.pathname !== "/dans-bio" &&
+                        <Link
+                            href="/dans-bio"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                            About Daniel
+                        </Link>
+                    }
                 </div>
             </div>
         </nav>
