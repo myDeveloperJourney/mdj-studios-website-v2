@@ -2,8 +2,9 @@ import Hero from "./HeroBanner";
 import Main from "./Main";
 import Footer from "./Footer";
 import Navbar from "../ui/Navbar";
-import React, { ReactNode } from 'react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import React, { ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react"
 
 interface LayoutProps {
     children: ReactNode;
@@ -20,6 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children, coverImageSourceURL, articleT
             <Main>
                 {children}
                 <SpeedInsights />
+                <Analytics />
             </Main>
             <Footer />
         </div>
