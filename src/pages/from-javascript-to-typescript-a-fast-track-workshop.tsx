@@ -20,6 +20,8 @@ export default function WorkshopPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    return;
+    // TODO: Uncomment this code when the form is ready to accept submissions
     const { name, value, type } = e.target as HTMLInputElement;
     const checked = (e.target as HTMLInputElement).checked;
     setFormState((prev) => ({
@@ -102,7 +104,7 @@ export default function WorkshopPage() {
             <li>Practical coding exercises with real-time feedback</li>
           </ul>
 
-          <h2 className="text-3xl font-semibold mb-6">Meet the Speakers</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-center lg:text-left">Meet the Speakers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="flex flex-col items-center text-center">
               <Image
@@ -208,13 +210,15 @@ export default function WorkshopPage() {
               <ValidationError prefix="Role" field="role" errors={state.errors} />
             </div>
 
-            <div className="text-center">
+            <div className="text-center mt-7">
               <button
                 type="submit"
-                disabled={state.submitting}
+                // TODO: Uncomment this code when the form is ready to accept submissions
+                // disabled={state.submitting}
+                disabled={true}
                 className="px-6 py-2 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition duration-300"
               >
-                Register Now
+                Registration Closed <br /> Stay Tuned for Future Workshops
               </button>
               <ValidationError errors={state.errors} />
             </div>
