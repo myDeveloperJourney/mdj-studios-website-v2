@@ -82,7 +82,7 @@ export default function BioPage() {
                 <strong>U.S. Army</strong> - Wheeled Vehicle Mechanic (Sergeant)  
                 <span className="block text-gray-500">2004 - 2010</span>
                 <p>
-                  Led logistics operations in Iraq, completing over 100 missions and receiving multiple awards, including the Purple Heart.
+                  Provided security for logistics patrol operations in Iraq, completing dozens of missions and receiving several awards, including the Purple Heart.
                 </p>
               </li>
             </ul>
