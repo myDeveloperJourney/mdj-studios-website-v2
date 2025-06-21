@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="bg-gray-800 text-white py-4">
             <div className="text-center">
                 <p className="py-2">
-                    Copyright &copy; 2021 All Rights Reserved MDJ Studios
+                    Copyright &copy; {new Date().getFullYear()} All Rights Reserved MDJ Studios
                 </p>
                 {
                     router.pathname !== "/privacy-policy" &&
