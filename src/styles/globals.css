@@ -17,7 +17,7 @@ body {
 .layout-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 900px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,27 @@ body {
 
 .main-container {
   flex-grow: 1;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out both;
 }
