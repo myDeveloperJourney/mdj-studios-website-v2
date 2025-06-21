@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ coverImageSourceURL, articleTitle }) => {
                             href="/#contact"
                             className="inline-block mt-6 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-sm text-white font-medium rounded-md"
                         >
-                            Let’s Talk
+                            Get a Free Quote
                         </Link>
                     </>
                 )}
