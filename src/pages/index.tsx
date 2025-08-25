@@ -230,7 +230,7 @@ export default function Home() {
           {/* Centered layout for profile and form */}
           <div className="flex flex-col items-center md:flex-row md:items-start md:justify-center gap-8">
             {/* Profile Section */}
-            <div className="text-center mt-[18px]">
+            {/* <div className="text-center mt-[18px]">
               <Image
                 src="/images/daniel.jpg" // replace with your image path
                 alt="Daniel Scott"
@@ -240,7 +240,7 @@ export default function Home() {
               />
               <h3 className="text-2xl font-bold mt-4">Daniel Scott</h3>
               <p className="text-gray-500">Owner | Senior Application Developer</p>
-            </div>
+            </div> */}
 
             {/* Form Section */}
             <form
