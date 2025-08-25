@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import SEO from "@/components/layout/Head";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function BioPage() {
   return (
@@ -20,7 +20,7 @@ export default function BioPage() {
 
           {/* Bio Section: Horizontal on desktop, vertical on mobile */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            {/* Profile Picture */}
+            {/* Profile Picture 
             <div className="flex-shrink-0">
               <Image
                 src="/images/daniel.jpg"
@@ -30,6 +30,7 @@ export default function BioPage() {
                 className="rounded-full shadow-lg"
               />
             </div>
+            */}
 
             {/* Bio Summary */}
             <div className="text-lg leading-relaxed">
