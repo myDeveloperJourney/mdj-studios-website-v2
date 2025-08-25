@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import SEO from "@/components/layout/Head";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function BioPage() {
   return (
