@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version:*)",
+      "Bash(npm --version:*)",
+      "Bash(source:*)",
+      "Bash(nvm ls:*)",
+      "Bash(nvm use:*)",
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(python3:*)",
+      "Bash(nvm install:*)",
+      "Bash(npm audit fix:*)",
+      "Bash(npm audit:*)",
+      "Bash(node -e:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:www.traversymedia.com)",
+      "WebFetch(domain:www.kevinpowell.co)",
+      "WebFetch(domain:www.joshwcomeau.com)",
+      "WebFetch(domain:kentcdodds.com)",
+      "WebFetch(domain:wesbos.com)",
+      "WebFetch(domain:t3.gg)",
+      "WebFetch(domain:syntax.fm)",
+      "WebFetch(domain:www.epicweb.dev)",
+      "WebFetch(domain:levelup.video)",
+      "WebFetch(domain:freshysites.com)",
+      "WebFetch(domain:ping.gg)",
+      "WebFetch(domain:neilpatel.com)",
+      "Bash(npm run build:*)",
+      "Bash(nvm alias:*)",
+      "Bash(gh repo view:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(ls:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(gh api:*)"
+    ]
+  }
+}
