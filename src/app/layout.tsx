@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
@@ -21,6 +21,15 @@ const geistMono = localFont({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+    { media: "(prefers-color-scheme: light)", color: "#4f46e5" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: {
     default: "MDJ Studios | Web Development Agency & Technical Education",
@@ -38,10 +47,24 @@ export const metadata: Metadata = {
     "technical instructor",
     "React",
     "Next.js",
+    "web development agency Fort Worth",
+    "software engineer Texas",
+    "custom web applications",
+    "Node.js developer",
+    "TypeScript developer",
+    "technical education",
+    "coding workshops",
+    "software engineering instructor",
+    "small business web development",
+    "full stack developer",
+    "Daniel Scott developer",
   ],
   authors: [{ name: "Daniel Scott", url: "https://mdjstudios.com" }],
   creator: "MDJ Studios",
   metadataBase: new URL("https://mdjstudios.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -52,10 +75,11 @@ export const metadata: Metadata = {
       "MDJ Studios is a digital agency founded by Daniel Scott, specializing in software development, web applications, UX design, and technical education.",
     images: [
       {
-        url: "/images/logo.svg",
-        width: 375,
-        height: 375,
-        alt: "MDJ Studios Logo",
+        url: "/images/daniel-scott-cropped.jpg",
+        width: 1245,
+        height: 1198,
+        alt: "Daniel Scott, Founder of MDJ Studios",
+        type: "image/jpeg",
       },
     ],
   },
@@ -64,15 +88,28 @@ export const metadata: Metadata = {
     title: "MDJ Studios | Web Development Agency & Technical Education",
     description:
       "MDJ Studios is a digital agency founded by Daniel Scott, specializing in software development, web applications, UX design, and technical education.",
-    images: ["/images/logo.svg"],
+    images: [
+      {
+        url: "/images/daniel-scott-cropped.jpg",
+        alt: "Daniel Scott, Founder of MDJ Studios",
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: "/images/logo-dark-bg.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -102,13 +139,17 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
+                  "@id": "https://mdjstudios.com/#organization",
                   name: "MDJ Studios",
                   url: "https://mdjstudios.com",
-                  logo: "https://mdjstudios.com/images/logo.svg",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://mdjstudios.com/images/logo-dark-bg.png",
+                    width: 500,
+                    height: 500,
+                  },
                   founder: {
-                    "@type": "Person",
-                    name: "Daniel Scott",
-                    jobTitle: "Founder & Senior Application Developer",
+                    "@id": "https://mdjstudios.com/#person-daniel-scott",
                   },
                   address: {
                     "@type": "PostalAddress",
@@ -124,9 +165,102 @@ export default function RootLayout({
                   ],
                 },
                 {
-                  "@type": "WebSite",
+                  "@type": "ProfessionalService",
+                  "@id": "https://mdjstudios.com/#service",
                   name: "MDJ Studios",
                   url: "https://mdjstudios.com",
+                  description:
+                    "Digital agency specializing in software development, web applications, UX design, and technical education.",
+                  priceRange: "$$",
+                  areaServed: {
+                    "@type": "GeoCircle",
+                    geoMidpoint: {
+                      "@type": "GeoCoordinates",
+                      latitude: 32.7555,
+                      longitude: -97.3308,
+                    },
+                    geoRadius: "50000",
+                  },
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Web Development Services",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Software & Web Development",
+                          description:
+                            "Custom web applications using React, Next.js, and Node.js.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "User Experience Design",
+                          description:
+                            "Intuitive, engaging interface design for websites, web apps, and SaaS products.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Creative & Digital Strategy",
+                          description:
+                            "Branding, graphic design, content strategy, and social media management.",
+                        },
+                      },
+                    ],
+                  },
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://mdjstudios.com/#person-daniel-scott",
+                  name: "Daniel Scott",
+                  jobTitle: "Founder & Senior Application Developer",
+                  url: "https://mdjstudios.com/about",
+                  image:
+                    "https://mdjstudios.com/images/daniel-scott-cropped.jpg",
+                  description:
+                    "Software developer, technical educator, and founder of MDJ Studios. Senior Lead Software Engineering Instructor at General Assembly.",
+                  worksFor: {
+                    "@id": "https://mdjstudios.com/#organization",
+                  },
+                  alumniOf: [
+                    {
+                      "@type": "EducationalOrganization",
+                      name: "University of Phoenix",
+                    },
+                    {
+                      "@type": "EducationalOrganization",
+                      name: "Coding Dojo",
+                    },
+                  ],
+                  knowsAbout: [
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Node.js",
+                    "Python",
+                    "UX Design",
+                    "Software Engineering Education",
+                  ],
+                  sameAs: [
+                    "https://github.com/myDeveloperJourney",
+                    "https://linkedin.com/in/engrdanielscott",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://mdjstudios.com/#website",
+                  name: "MDJ Studios",
+                  url: "https://mdjstudios.com",
+                  publisher: {
+                    "@id": "https://mdjstudios.com/#organization",
+                  },
                 },
               ],
             }),

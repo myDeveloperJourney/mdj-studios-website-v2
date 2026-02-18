@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://mdjstudios.com",
+  },
+  openGraph: {
+    url: "https://mdjstudios.com",
+  },
+};
 import SocialProof from "@/components/sections/SocialProof";
 import ServicesSection from "@/components/sections/ServicesSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";

@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Articles",
   description:
     "Read articles about web development, software engineering, and the tech industry from Daniel Scott and the MDJ Studios team.",
+  alternates: {
+    canonical: "https://mdjstudios.com/articles",
+  },
+  openGraph: {
+    url: "https://mdjstudios.com/articles",
+  },
 };
 
 interface Article {

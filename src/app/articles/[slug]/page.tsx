@@ -45,9 +45,13 @@ export async function generateMetadata({
     return {
       title: article.title,
       description: article.excerpt,
+      alternates: {
+        canonical: `https://mdjstudios.com/articles/${slug}`,
+      },
       openGraph: {
         title: article.title,
         description: article.excerpt,
+        url: `https://mdjstudios.com/articles/${slug}`,
         images: [{ url: article.coverImage.url }],
         type: "article",
       },
@@ -77,9 +81,62 @@ export default async function ArticlePage({
     notFound();
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt,
+        image: article.coverImage.url,
+        author: {
+          "@type": "Person",
+          name: article.author.name,
+          jobTitle: article.author.jobTitle,
+          url: "https://mdjstudios.com/about",
+        },
+        publisher: {
+          "@id": "https://mdjstudios.com/#organization",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://mdjstudios.com/articles/${slug}`,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://mdjstudios.com",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Articles",
+            item: "https://mdjstudios.com/articles",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: article.title,
+            item: `https://mdjstudios.com/articles/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
-    <article className="py-12">
-      {/* Hero image */}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <article className="py-12">
+        {/* Hero image */}
       <div className="relative w-full h-64 sm:h-80 lg:h-96 mb-8">
         <Image
           src={article.coverImage.url}
@@ -209,5 +266,6 @@ export default async function ArticlePage({
         </div>
       </div>
     </article>
+    </>
   );
 }

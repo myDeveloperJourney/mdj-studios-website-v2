@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "MDJ Studios privacy policy — how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: "https://mdjstudios.com/privacy-policy",
+  },
+  openGraph: {
+    url: "https://mdjstudios.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

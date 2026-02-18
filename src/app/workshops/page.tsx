@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Workshops",
   description:
     "Join MDJ Studios workshops and learn web development skills from industry professionals.",
+  alternates: {
+    canonical: "https://mdjstudios.com/workshops",
+  },
+  openGraph: {
+    url: "https://mdjstudios.com/workshops",
+  },
 };
 
 const speakers = [

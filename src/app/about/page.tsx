@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "About Daniel Scott",
   description:
     "Learn more about Daniel Scott, founder of MDJ Studios — his journey from the U.S. Army to tech, his expertise, and his passion for teaching.",
+  alternates: {
+    canonical: "https://mdjstudios.com/about",
+  },
+  openGraph: {
+    url: "https://mdjstudios.com/about",
+  },
 };
 
 const experience = [
@@ -50,7 +56,20 @@ const skills = [
 
 export default function AboutPage() {
   return (
-    <div className="py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            mainEntity: {
+              "@id": "https://mdjstudios.com/#person-daniel-scott",
+            },
+          }),
+        }}
+      />
+      <div className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
           title="Meet the Founder"
@@ -175,5 +194,6 @@ export default function AboutPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
