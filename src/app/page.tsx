@@ -17,7 +17,7 @@ export default function HomePage() {
             <div className="flex-shrink-0">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-4 border-[var(--color-primary)] shadow-xl">
                 <Image
-                  src="/images/daniel-scott.jpg"
+                  src="/images/daniel-scott-cropped.jpg"
                   alt="Daniel Scott, Founder of MDJ Studios"
                   fill
                   className="object-cover"
