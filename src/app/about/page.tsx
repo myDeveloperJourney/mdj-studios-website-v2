@@ -49,7 +49,7 @@ const experience = [
 const skills = [
   { category: "Languages", items: "Python, JavaScript, TypeScript, HTML5, CSS3" },
   { category: "Frameworks", items: "React, Next.js, Express, Node.js" },
-  { category: "AI & Automation", items: "LangChain, OpenAI API, Claude API, Retrieval-Augmented Generation" },
+  { category: "AI & Automation", items: "LangChain, CrewAI, AI SDK, OpenAI API, Claude API, Google API, Retrieval-Augmented Generation" },
   { category: "Databases", items: "PostgreSQL, MongoDB, Firebase" },
   { category: "Tools", items: "Git, GitHub Actions, Vercel, AWS" },
   { category: "Testing", items: "Jest, Mocha, Pytest" },
