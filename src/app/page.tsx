@@ -46,8 +46,8 @@ export default function HomePage() {
                 <span className="text-[var(--color-primary)]">MDJ Studios</span>
               </h1>
               <p className="mt-4 text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-xl leading-relaxed">
-                I build digital products and teach the next generation of
-                developers. Let&apos;s create something remarkable together.
+                I build AI-powered software and train professionals to work
+                smarter with AI. Let&apos;s create something remarkable together.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button href="/#contact" size="lg">
@@ -80,18 +80,19 @@ export default function HomePage() {
                 About the Founder
               </p>
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                From the Military to Tech
+                From the Military to Tech to AI
               </h2>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
                 My journey took me from serving as an Army mechanic, to a career
                 in private banking at JPMorgan Chase, to founding MDJ Studios in
-                2014. Today I lead a digital agency while also serving as a
-                Senior Lead Instructor at General Assembly, where I&apos;ve
-                taught over 1,000 students the craft of software engineering.
+                2014. Today I lead a digital agency specializing in AI-powered
+                solutions while also serving as a Senior Lead Instructor at
+                General Assembly, where I train professionals to augment their
+                workflows using AI.
               </p>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                I believe in building software with purpose and empowering others
-                to do the same.
+                I believe in building software with purpose — and right now, AI
+                is the most powerful tool we have to do that.
               </p>
               <Button href="/about" variant="secondary">
                 Read My Full Story
@@ -113,8 +114,8 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <CTABanner
-        title="Ready to bring your idea to life?"
-        description="Let's discuss your project and find the perfect solution for your business."
+        title="Ready to put AI to work for your business?"
+        description="Let's talk about where AI can save you time, cut costs, and handle the tasks that slow your team down."
         buttonText="Start a Conversation"
         buttonHref="/#contact"
       />

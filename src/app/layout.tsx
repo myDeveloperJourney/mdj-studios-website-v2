@@ -32,11 +32,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "MDJ Studios | Web Development Agency & Technical Education",
+    default: "MDJ Studios | AI-Powered Software Development & Technical Education",
     template: "%s | MDJ Studios",
   },
   description:
-    "MDJ Studios is a digital agency founded by Daniel Scott, specializing in software development, web applications, UX design, and technical education.",
+    "MDJ Studios is a digital agency founded by Daniel Scott, specializing in AI-powered software development, intelligent automation, web applications, and technical education.",
   keywords: [
     "web development",
     "software development",
@@ -58,6 +58,15 @@ export const metadata: Metadata = {
     "small business web development",
     "full stack developer",
     "Daniel Scott developer",
+    "AI-powered solutions",
+    "agentic AI",
+    "AI automation",
+    "AI for small business",
+    "generative AI training",
+    "intelligent automation",
+    "AI development agency",
+    "AI workflow automation",
+    "AI consulting Fort Worth",
   ],
   authors: [{ name: "Daniel Scott", url: "https://mdjstudios.com" }],
   creator: "MDJ Studios",
@@ -70,9 +79,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://mdjstudios.com",
     siteName: "MDJ Studios",
-    title: "MDJ Studios | Web Development Agency & Technical Education",
+    title: "MDJ Studios | AI-Powered Software Development & Technical Education",
     description:
-      "MDJ Studios is a digital agency founded by Daniel Scott, specializing in software development, web applications, UX design, and technical education.",
+      "MDJ Studios is a digital agency founded by Daniel Scott, specializing in AI-powered software development, intelligent automation, web applications, and technical education.",
     images: [
       {
         url: "/images/daniel-scott-cropped.jpg",
@@ -85,9 +94,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDJ Studios | Web Development Agency & Technical Education",
+    title: "MDJ Studios | AI-Powered Software Development & Technical Education",
     description:
-      "MDJ Studios is a digital agency founded by Daniel Scott, specializing in software development, web applications, UX design, and technical education.",
+      "MDJ Studios is a digital agency founded by Daniel Scott, specializing in AI-powered software development, intelligent automation, web applications, and technical education.",
     images: [
       {
         url: "/images/daniel-scott-cropped.jpg",
@@ -170,7 +179,7 @@ export default function RootLayout({
                   name: "MDJ Studios",
                   url: "https://mdjstudios.com",
                   description:
-                    "Digital agency specializing in software development, web applications, UX design, and technical education.",
+                    "Digital agency specializing in AI-powered software development, intelligent automation, web applications, UX design, and technical education.",
                   priceRange: "$$",
                   areaServed: {
                     "@type": "GeoCircle",
@@ -183,7 +192,7 @@ export default function RootLayout({
                   },
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
-                    name: "Web Development Services",
+                    name: "AI & Web Development Services",
                     itemListElement: [
                       {
                         "@type": "Offer",
@@ -212,6 +221,15 @@ export default function RootLayout({
                             "Branding, graphic design, content strategy, and social media management.",
                         },
                       },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "AI-Powered Solutions",
+                          description:
+                            "Custom AI agents, intelligent automations, and AI-integrated applications that help businesses save time and reduce costs.",
+                        },
+                      },
                     ],
                   },
                 },
@@ -224,7 +242,7 @@ export default function RootLayout({
                   image:
                     "https://mdjstudios.com/images/daniel-scott-cropped.jpg",
                   description:
-                    "Software developer, technical educator, and founder of MDJ Studios. Senior Lead Software Engineering Instructor at General Assembly.",
+                    "Software developer, AI solutions architect, technical educator, and founder of MDJ Studios. Specializes in agentic AI and intelligent automation. Senior Lead Instructor at General Assembly, training professionals to leverage generative AI.",
                   worksFor: {
                     "@id": "https://mdjstudios.com/#organization",
                   },
@@ -247,6 +265,11 @@ export default function RootLayout({
                     "Python",
                     "UX Design",
                     "Software Engineering Education",
+                    "Artificial Intelligence",
+                    "Agentic AI",
+                    "Generative AI",
+                    "AI Automation",
+                    "LangChain",
                   ],
                   sameAs: [
                     "https://github.com/myDeveloperJourney",

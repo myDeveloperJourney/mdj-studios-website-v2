@@ -68,16 +68,17 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
           title="Let's Work Together"
-          subtitle="Have a project in mind? We'd love to hear from you."
+          subtitle="Have a project in mind? Let's explore how AI can help."
         />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Left: info */}
           <div className="space-y-6">
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
-              Whether you need a new website, a web application, or creative
-              support, we&apos;re here to help bring your vision to life. Fill
-              out the form and we&apos;ll get back to you shortly.
+              Whether you need an AI-powered application, a new website, or
+              help automating your workflows, we&apos;re here to bring your
+              vision to life. Fill out the form and we&apos;ll get back to you
+              shortly.
             </p>
 
             <div className="space-y-4">

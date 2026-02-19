@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "About Daniel Scott",
   description:
-    "Learn more about Daniel Scott, founder of MDJ Studios — his journey from the U.S. Army to tech, his expertise, and his passion for teaching.",
+    "Learn more about Daniel Scott, founder of MDJ Studios — his journey from the U.S. Army to tech and AI, his expertise in building AI-powered solutions, and his work training professionals to leverage AI.",
   alternates: {
     canonical: "https://mdjstudios.com/about",
   },
@@ -21,14 +21,14 @@ const experience = [
     role: "Owner | Senior Application Developer",
     period: "2014 - Present",
     description:
-      "Established a successful digital agency, building and maintaining websites, web applications, and SaaS platforms for small businesses and non-profits. Mentors aspiring software developers through free workshops and community events.",
+      "Established a successful digital agency, building websites, web applications, SaaS platforms, and AI-powered solutions for small businesses and non-profits. Specializes in agentic AI systems and intelligent automations that help businesses save time and reduce operational costs. Mentors aspiring developers and AI practitioners through free workshops and community events.",
   },
   {
     company: "General Assembly",
     role: "Senior Lead Software Engineering Instructor",
     period: "2017 - Present",
     description:
-      "Mentored hundreds of students to become junior software engineers through immersive programs. Recognized as a Distinguished Faculty Member for outstanding performance and served on the Product Advisory Board.",
+      "Trains professionals to augment their workflows using generative AI tools and has mentored hundreds of students to become junior software engineers through immersive programs. Recognized as a Distinguished Faculty Member for outstanding performance and served on the Product Advisory Board.",
   },
   {
     company: "JPMorgan Chase",
@@ -49,6 +49,7 @@ const experience = [
 const skills = [
   { category: "Languages", items: "Python, JavaScript, TypeScript, HTML5, CSS3" },
   { category: "Frameworks", items: "React, Next.js, Express, Node.js" },
+  { category: "AI & Automation", items: "LangChain, OpenAI API, Claude API, Retrieval-Augmented Generation" },
   { category: "Databases", items: "PostgreSQL, MongoDB, Firebase" },
   { category: "Tools", items: "Git, GitHub Actions, Vercel, AWS" },
   { category: "Testing", items: "Jest, Mocha, Pytest" },
@@ -97,22 +98,26 @@ export default function AboutPage() {
               the potential of software automation to disrupt his role.
               Determined to stay ahead of the curve, Daniel taught himself
               software development over two years, all while finishing his
-              career in finance.
+              career in finance. That same instinct — recognizing where
+              technology is heading and moving toward it early — now drives his
+              focus on AI-powered solutions.
             </p>
             <p>
-              Daniel now leads MDJ Studios, a software development studio
-              providing solutions for small businesses and non-profits. Since
-              2017, he has shared his expertise as a Senior Lead Software
-              Engineering Instructor at General Assembly, where he has mentored
-              aspiring software developers and was recognized as a Distinguished
-              Faculty Member for exemplary performance.
+              Daniel now leads MDJ Studios, a software development studio that
+              builds AI-enabled applications and custom automations for small
+              businesses and non-profits. Since 2017, he has shared his
+              expertise as a Senior Lead Instructor at General Assembly, where
+              he trains professionals to augment their workflows with generative
+              AI tools and was recognized as a Distinguished Faculty Member for
+              exemplary performance.
             </p>
             <p>
               Daniel is passionate about building software that empowers people
-              and thrives in fast-paced environments. In addition to running his
-              studio, he is actively involved in mentoring the next generation
-              of developers through community events, speaking engagements,
-              workshops, and courses.
+              and helping businesses harness AI to work more efficiently. In
+              addition to running his studio, he is actively involved in
+              mentoring the next generation of developers and AI practitioners
+              through community events, speaking engagements, workshops, and
+              courses.
             </p>
           </div>
         </div>

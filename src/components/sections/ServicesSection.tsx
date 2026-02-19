@@ -5,8 +5,14 @@ const services = [
   {
     title: "Software & Web Development",
     description:
-      "We create exceptional digital experiences using modern technologies like React, Next.js, and Node.js. From MVPs to enterprise applications, we build solutions that scale.",
+      "We create exceptional digital experiences using modern technologies like React, Next.js, and Node.js. From MVPs to enterprise platforms, we build solutions that scale — with AI integrations where they add real value.",
     image: "/images/software-dev.webp",
+  },
+  {
+    title: "AI-Powered Solutions",
+    description:
+      "We help businesses put AI to work — from intelligent agents that handle routine tasks to custom automations that save hours every week. Whether you need smarter workflows, automated customer interactions, or AI-driven tools built for your team, we turn the latest in AI into practical solutions that reduce costs and free you up to focus on growth.",
+    image: "/images/ai-solutions.webp",
   },
   {
     title: "User Experience Design",
@@ -28,10 +34,10 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
           title="What We Do"
-          subtitle="We combine technical expertise with creative vision to deliver digital solutions that drive real results."
+          subtitle="We combine deep technical expertise with AI to deliver digital solutions that save time, cut costs, and drive real results."
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service) => (
             <div
               key={service.title}

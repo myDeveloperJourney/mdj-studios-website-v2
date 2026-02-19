@@ -1,7 +1,7 @@
 const stats = [
-  { value: "10+", label: "Years Experience" },
+  { value: "10+", label: "Years in Tech" },
   { value: "50+", label: "Projects Delivered" },
-  { value: "1000+", label: "Students Taught" },
+  { value: "1000+", label: "Professionals Trained" },
   { value: "3", label: "Companies Built" },
 ];
 

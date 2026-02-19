@@ -27,7 +27,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-[var(--color-text-secondary)] mb-4 leading-relaxed">
-              Building digital products and teaching the next generation of developers.
+              Building AI-powered software and training professionals to work smarter with AI.
             </p>
             <SocialLinks iconSize="sm" />
           </div>

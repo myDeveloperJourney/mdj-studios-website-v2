@@ -37,7 +37,9 @@
       "Bash(npm uninstall:*)",
       "Bash(gh api:*)",
       "Bash(git config:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(curl:*)",
+      "Bash(sips:*)"
     ]
   }
 }
