@@ -6,24 +6,30 @@ const projects = [
     title: "Listing View",
     description:
       "SaaS platform helping Etsy sellers manage their shops with authentication, compliance auditing, and a complete brand refresh.",
-    image: "/images/listing-view.jpg",
+    fallbackImage: "/images/listing-view.jpg",
     href: "https://listingview.io",
   },
   {
     title: "Roger's Wildlife",
     description:
       "Non-profit website featuring online donations, an interactive rescue map, and a photo gallery to support bird rescue operations.",
-    image: "/images/rogers-wildlife.jpg",
+    fallbackImage: "/images/rogers-wildlife.jpg",
     href: "https://rogerswildlife.org",
   },
   {
     title: "The Wright Fence Co.",
     description:
       "Local business website with service showcases, image carousels, live chat integration, and embedded maps for a fencing company.",
-    image: "/images/the-wright-fence-co.jpg",
+    fallbackImage: "/images/the-wright-fence-co.jpg",
     href: "https://thewrightfenceco.com",
   },
 ];
+
+function getScreenshotUrl(siteUrl: string): string {
+  const useScreenshots = !!process.env.SCREENSHOTONE_ACCESS_KEY;
+  if (!useScreenshots) return "";
+  return `/api/screenshot?url=${encodeURIComponent(siteUrl)}`;
+}
 
 export default function PortfolioSection() {
   return (
@@ -35,7 +41,11 @@ export default function PortfolioSection() {
         />
 
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map((project) => {
+            const screenshotUrl = getScreenshotUrl(project.href);
+            const imageSrc = screenshotUrl || project.fallbackImage;
+
+            return (
             <a
               key={project.title}
               href={project.href}
@@ -47,9 +57,10 @@ export default function PortfolioSection() {
             >
               <div className="relative w-full aspect-video overflow-hidden">
                 <Image
-                  src={project.image}
-                  alt={project.title}
+                  src={imageSrc}
+                  alt={`Screenshot of ${project.title}`}
                   fill
+                  unoptimized={!!screenshotUrl}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
@@ -75,7 +86,8 @@ export default function PortfolioSection() {
                 </p>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
