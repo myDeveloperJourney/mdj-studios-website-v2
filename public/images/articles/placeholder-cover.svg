@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Placeholder article cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" fill="#ffffff">
+    <circle cx="120" cy="120" r="10" fill="#eeb30d"/>
+    <text x="150" y="132" font-size="30" font-weight="700" letter-spacing="2" opacity="0.9">MDJ STUDIOS</text>
+
+    <text x="120" y="470" font-size="96" font-weight="800" letter-spacing="-2">
+      Placeholder cover
+    </text>
+    <text x="120" y="540" font-size="36" font-weight="400" opacity="0.8">
+      Replace with a 1600 × 900 JPG for each post.
+    </text>
+
+    <text x="120" y="820" font-size="24" font-weight="500" opacity="0.7" letter-spacing="1">
+      /public/images/articles/
+    </text>
+  </g>
+</svg>

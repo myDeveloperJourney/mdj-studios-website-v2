@@ -73,6 +73,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mdjstudios.com"),
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [
+        { url: "/feed.xml", title: "MDJ Studios: Articles" },
+      ],
+    },
   },
   openGraph: {
     type: "website",

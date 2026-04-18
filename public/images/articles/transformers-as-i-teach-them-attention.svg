@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-label="Attention weights from the word 'sat' to every other word in 'The cat sat on the mat.' Thicker lines mean higher attention. 'Cat' and 'mat' receive the highest weight.">
+  <defs>
+    <style>
+      .label { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+      .word-box { fill: #f9fafb; stroke: #e5e7eb; stroke-width: 1.5; }
+      .word-text { fill: #111827; font-weight: 600; font-size: 20px; }
+      .query-box { fill: #4f46e5; stroke: #4338ca; stroke-width: 1.5; }
+      .query-text { fill: #ffffff; font-weight: 700; font-size: 20px; }
+      .weight-text { fill: #6b7280; font-size: 13px; font-weight: 500; }
+      .caption { fill: #6b7280; font-size: 13px; font-style: italic; }
+      .hi { stroke: #eeb30d; }
+      .med { stroke: #6366f1; }
+      .lo { stroke: #cbd5e1; }
+    </style>
+  </defs>
+
+  <!-- Top row: "keys", the words being attended TO -->
+  <g class="label">
+    <!-- The -->
+    <rect class="word-box" x="50"  y="60" width="110" height="52" rx="10"/>
+    <text class="word-text" x="105" y="93" text-anchor="middle">The</text>
+    <text class="weight-text" x="105" y="135" text-anchor="middle">0.04</text>
+
+    <!-- cat -->
+    <rect class="word-box" x="190" y="60" width="110" height="52" rx="10"/>
+    <text class="word-text" x="245" y="93" text-anchor="middle">cat</text>
+    <text class="weight-text" x="245" y="135" text-anchor="middle">0.36</text>
+
+    <!-- on -->
+    <rect class="word-box" x="475" y="60" width="110" height="52" rx="10"/>
+    <text class="word-text" x="530" y="93" text-anchor="middle">on</text>
+    <text class="weight-text" x="530" y="135" text-anchor="middle">0.12</text>
+
+    <!-- the -->
+    <rect class="word-box" x="615" y="60" width="110" height="52" rx="10"/>
+    <text class="word-text" x="670" y="93" text-anchor="middle">the</text>
+    <text class="weight-text" x="670" y="135" text-anchor="middle">0.04</text>
+
+    <!-- mat -->
+    <rect class="word-box" x="755" y="60" width="110" height="52" rx="10"/>
+    <text class="word-text" x="810" y="93" text-anchor="middle">mat</text>
+    <text class="weight-text" x="810" y="135" text-anchor="middle">0.39</text>
+  </g>
+
+  <!-- Attention arcs, drawn from (470, 320) up to each top word's center-bottom -->
+  <!-- thickness encodes weight -->
+  <!-- to The:  low -->
+  <path class="lo" fill="none" stroke-width="1.5"
+        d="M 470 320 C 380 260, 220 180, 105 112"/>
+  <!-- to cat:  high (gold) -->
+  <path class="hi" fill="none" stroke-width="11"
+        d="M 470 320 C 410 260, 320 180, 245 112"/>
+  <!-- to on:   medium -->
+  <path class="med" fill="none" stroke-width="4"
+        d="M 470 320 C 495 260, 520 180, 530 112"/>
+  <!-- to the:  low -->
+  <path class="lo" fill="none" stroke-width="1.5"
+        d="M 470 320 C 550 260, 620 180, 670 112"/>
+  <!-- to mat:  highest (gold) -->
+  <path class="hi" fill="none" stroke-width="12"
+        d="M 470 320 C 600 260, 720 180, 810 112"/>
+
+  <!-- Query word at bottom: "sat" -->
+  <g class="label">
+    <rect class="query-box" x="415" y="315" width="110" height="52" rx="10"/>
+    <text class="query-text" x="470" y="348" text-anchor="middle">sat</text>
+    <text class="caption" x="470" y="395" text-anchor="middle">
+      Query: which words matter for understanding &quot;sat&quot;?
+    </text>
+  </g>
+
+  <!-- Side legend -->
+  <g class="label" transform="translate(30, 400)">
+    <line class="hi"  x1="0" y1="0" x2="30" y2="0" stroke-width="10"/>
+    <text class="weight-text" x="38" y="5">high attention</text>
+    <line class="med" x1="155" y1="0" x2="185" y2="0" stroke-width="4"/>
+    <text class="weight-text" x="193" y="5">medium</text>
+    <line class="lo"  x1="270" y1="0" x2="300" y2="0" stroke-width="1.5"/>
+    <text class="weight-text" x="308" y="5">low</text>
+  </g>
+</svg>

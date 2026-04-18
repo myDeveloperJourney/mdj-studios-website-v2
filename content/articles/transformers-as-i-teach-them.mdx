@@ -1,0 +1,110 @@
+---
+title: "Transformers, as I teach them"
+date: "2026-04-18"
+excerpt: "Strip away the math and what's left is surprisingly clean. Here's the mental model I use when I teach transformers, the architecture behind every modern LLM, to students who've never written a line of machine learning."
+tags:
+  - "LLMs"
+  - "Teaching"
+  - "Machine Learning"
+cover: "/images/articles/transformers-as-i-teach-them-attention.svg"
+coverAlt: "An attention diagram showing how the word 'sat' attends to 'cat' and 'mat' most strongly in the sentence 'The cat sat on the mat.'"
+---
+
+You've used ChatGPT. The "T" stands for **Transformer**. That's the neural-network architecture sitting underneath every mainstream LLM: Claude, Gemini, GPT, Llama. Same shape on the inside.
+
+When I teach transformers at General Assembly, I get about an hour. My students are smart adults who can code but haven't done matrix math since college. That constraint forces a particular approach. Strip everything non-essential, teach exactly one idea, make it stick. Here's that one-hour version.
+
+## The problem transformers solved
+
+Before transformers, the best language models read text the way you read a book, one word at a time, front to back. That's an **RNN** (recurrent neural network). The model would process "the," remember it, then "cat," update its memory, then "sat," update again, and so on. By the time it got to the end of a paragraph, it had mostly forgotten the beginning.
+
+Two problems. It's slow, because you can't start processing word 5 until you're done with word 4. And it's forgetful, because early context fades by the end.
+
+```
+RNN (the old way):
+
+  word1 → word2 → word3 → word4 → word5 → word6
+   |       |       |       |       |       |
+  mem    mem    mem    mem    mem    mem      ← memory degrades each step
+
+
+Transformer (the new way):
+
+  word1   word2   word3   word4   word5   word6
+   ↕═══════ all words look at all other words at once ═══════↕
+```
+
+## The big idea: every word looks at every other word
+
+Transformers replace "read one at a time, keep a fuzzy memory" with "let every word look at every other word at the same time."
+
+My classroom analogy. Instead of students taking turns contributing to a discussion, every student simultaneously scans the whole room and notes which classmates matter most for understanding what they themselves are trying to say.
+
+That scanning is called **attention**, and it's the one thing you actually need to understand.
+
+## How attention actually works
+
+For any given word, attention answers one question: *of all the other words in this sentence, which ones matter most for understanding me?*
+
+Take the sentence "The cat sat on the mat." To understand the word "sat," which words matter? "Cat" (who sat) and "mat" (where they sat). "The" doesn't add much. A trained attention mechanism puts heavy weight on "cat" and "mat," light weight on "the":
+
+![Attention weights from the word 'sat' to every other word in 'The cat sat on the mat.' Thicker lines mean higher attention. 'Cat' and 'mat' receive the highest weight.](/images/articles/transformers-as-i-teach-them-attention.svg)
+
+Here's how it does that. Every word is turned into three versions of itself:
+
+- **Query**: what this word is trying to figure out
+- **Key**: what this word offers to others
+- **Value**: what this word actually contains
+
+Stay with the classroom. Think of each word as a student holding up two pieces of paper. On one paper is the question they're trying to answer (Query). On the other is their area of expertise (Key). To figure out which classmates to listen to, each student checks whose expertise-paper best matches their question-paper. Those are the classmates whose Value (their actual contribution) gets weighted into the answer.
+
+That whole process is three matrix multiplications and a softmax. This is the part I usually skip the math on and just show the code:
+
+```python
+import numpy as np
+
+def softmax(x, axis=-1):
+    x = x - x.max(axis=axis, keepdims=True)
+    e = np.exp(x)
+    return e / e.sum(axis=axis, keepdims=True)
+
+def self_attention(X, Wq, Wk, Wv):
+    # X: your input sequence, shape (sequence_length, embedding_dim)
+    Q = X @ Wq   # Queries:  what each word is asking
+    K = X @ Wk   # Keys:     what each word offers
+    V = X @ Wv   # Values:   what each word contains
+
+    scores  = Q @ K.T / np.sqrt(Q.shape[-1])  # how well each Q matches each K
+    weights = softmax(scores, axis=-1)         # turn scores into weights
+    return weights @ V                         # weighted mix of the Values
+```
+
+That's self-attention. Not ten thousand lines of black magic. Twelve lines of linear algebra. Everything else in a transformer is scaffolding around this.
+
+## Why this won
+
+Two reasons transformers replaced everything else.
+
+**Speed.** Attention is one giant matrix multiplication, and GPUs love nothing more than giant matrix multiplications. RNNs were sequential; transformers are embarrassingly parallel. You can train on billions of tokens in days instead of months.
+
+**Reach.** Every word has direct access to every other word, with no intermediate steps for information to degrade through. When a modern LLM answers a question about something you said 50,000 tokens ago, it's because every word in that 50,000-token window can directly attend to every other word. An RNN would have paved over that memory hundreds of paragraphs earlier.
+
+## What I leave out of the hour
+
+A real transformer has more in it. Positional encoding, so the model knows word order. Multi-head attention, running several attention computations in parallel with different learned projections. Feed-forward layers, residual connections, layer normalization. All of those are important to *implementing* a transformer. None of them are important to *understanding why transformers work*.
+
+The one core insight (every word attending to every other word) is the thing. Everything else is engineering that makes it fast, stable, and scalable.
+
+## Takeaway
+
+Next time you read about a new LLM, you can mentally substitute: *a machine that learned, very carefully, which words should pay attention to which other words.* That's the architecture in one sentence.
+
+Everything people find impressive about modern AI (coherent long outputs, summarizing a 200-page document, the "it seems to understand me" feeling) is that one idea, run at terrifying scale.
+
+---
+
+If you want to go deeper from here:
+
+- [Attention Is All You Need](https://arxiv.org/abs/1706.03762). The 2017 paper that introduced the architecture. Short and surprisingly readable.
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) by Jay Alammar. The canonical visual walkthrough.
+- [3Blue1Brown's neural network series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi). For when you want the math made beautiful.
