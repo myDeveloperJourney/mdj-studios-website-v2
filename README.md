@@ -2,7 +2,7 @@
 
 The marketing site and content hub for **MDJ Studios**, my web/software development studio serving small businesses. Designed, built, and deployed end to end.
 
-🔗 **Live:** https://mdj-studios-website-v2.vercel.app
+🔗 **Live:** https://www.mdjstudios.com/
 
 ## What it does
 - **Marketing site** — services, portfolio, and contact, with a mobile-first, performance-minded build.
