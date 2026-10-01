@@ -28,7 +28,7 @@ export default function HomePage() {
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-4 border-[var(--color-primary)] shadow-xl">
                 <Image
                   src="/images/daniel-scott-cropped.jpg"
-                  alt="Daniel Scott, Founder of MDJ Studios"
+                  alt="Daniel Scott, AI Systems and Software Engineer and Technical Training Facilitator"
                   fill
                   className="object-cover"
                   priority
@@ -41,22 +41,40 @@ export default function HomePage() {
               <p className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-wider mb-2">
                 Hi, I&apos;m Daniel Scott
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                Founder of{" "}
-                <span className="text-[var(--color-primary)]">MDJ Studios</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+                AI Systems and Software Engineer and{" "}
+                <span className="text-[var(--color-primary)]">
+                  Technical Training Facilitator
+                </span>
               </h1>
               <p className="mt-4 text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-xl leading-relaxed">
-                I build AI-powered software and train professionals to work
-                smarter with AI. Let&apos;s create something remarkable together.
+                Helping tech professionals level up their skillset in the
+                agentic AI era.
+              </p>
+              <p className="mt-3 text-base text-[var(--color-text-secondary)] max-w-xl leading-relaxed">
+                I&apos;ve been teaching since 2017 and have trained 1000+
+                professionals. I make software and AI-enabled solutions
+                accessible, with a focus on building agentic workflows you can
+                actually run.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button href="/#contact" size="lg">
-                  Get a Free Quote
+                  Level Up Your Skillset
                 </Button>
                 <Button href="/about" variant="secondary" size="lg">
                   Learn About Me
                 </Button>
               </div>
+              <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
+                Companies hiring for training, facilitation, or AI systems work:{" "}
+                <a
+                  href="/#contact"
+                  className="text-[var(--color-primary)] hover:underline font-medium"
+                >
+                  get in touch
+                </a>
+                .
+              </p>
             </div>
           </div>
         </div>
@@ -77,22 +95,23 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[var(--color-primary)] font-semibold text-sm uppercase tracking-wider mb-2">
-                About the Founder
+                About Daniel
               </p>
               <h2 className="text-3xl font-bold tracking-tight mb-4">
-                From the Military to Tech to AI
+                From the Military to Tech to Agentic AI
               </h2>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
                 My journey took me from serving as an Army mechanic, to a career
-                in private banking at JPMorgan Chase, to founding MDJ Studios in
-                2014. Today I lead a digital agency specializing in AI-powered
-                solutions while also serving as a Senior Lead Instructor at
-                General Assembly, where I train professionals to augment their
-                workflows using AI.
+                in private banking at JPMorgan Chase, to building through MDJ
+                Studios since 2014. Today I work as an AI Systems and Software
+                Engineer and Technical Training Facilitator. I help tech
+                professionals level up and build agentic AI workflows, and I also
+                serve as a Senior Lead Technical Trainer at General Assembly.
               </p>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                I believe in building software with purpose — and right now, AI
-                is the most powerful tool we have to do that.
+                I learn in public: I share what I&apos;m trying and implementing
+                as I go, because that is how I work. Clear, hands-on, and focused
+                on what ships.
               </p>
               <Button href="/about" variant="secondary">
                 Read My Full Story
@@ -114,9 +133,9 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <CTABanner
-        title="Ready to put AI to work for your business?"
-        description="Let's talk about where AI can save you time, cut costs, and handle the tasks that slow your team down."
-        buttonText="Start a Conversation"
+        title="Ready to level up in the agentic AI era?"
+        description="I help tech professionals build agentic AI workflows they can actually run. Clear, hands-on, and focused on what ships. Companies hiring for training, facilitation, or AI systems work are welcome too."
+        buttonText="Level Up Your Skillset"
         buttonHref="/#contact"
       />
 

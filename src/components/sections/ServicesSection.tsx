@@ -3,27 +3,27 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const services = [
   {
-    title: "Software & Web Development",
+    title: "Agentic AI Workflows",
     description:
-      "We create exceptional digital experiences using modern technologies like React, Next.js, and Node.js. From MVPs to enterprise platforms, we build solutions that scale — with AI integrations where they add real value.",
-    image: "/images/software-dev.webp",
-  },
-  {
-    title: "AI-Powered Solutions",
-    description:
-      "We help businesses put AI to work — from intelligent agents that handle routine tasks to custom automations that save hours every week. Whether you need smarter workflows, automated customer interactions, or AI-driven tools built for your team, we turn the latest in AI into practical solutions that reduce costs and free you up to focus on growth.",
+      "The core offer: help tech professionals design and run agentic AI workflows they can actually ship. From intelligent agents that handle routine tasks to custom automations that save hours every week, I turn agentic AI into practical systems that raise your skillset and free you to focus on higher-value work.",
     image: "/images/ai-solutions.webp",
   },
   {
-    title: "User Experience Design",
+    title: "Technical Training & Facilitation",
     description:
-      "We design intuitive, engaging interfaces that keep your users coming back. Whether it's a website, web app, or SaaS product, we put the user first.",
-    image: "/images/ux-design.webp",
+      "Hands-on training for tech professionals leveling up in the agentic AI era. Clear, accessible facilitation focused on what ships. Teaching since 2017 with 1000+ professionals trained, including work as a Senior Lead Technical Trainer at General Assembly.",
+    image: "/images/workshop_banner.jpg",
   },
   {
-    title: "Creative & Digital Strategy",
+    title: "Software & Web Development",
     description:
-      "We serve as your in-house creative team. From branding and graphic design to content strategy and social media, we tell your story across every channel.",
+      "Custom applications that support agentic systems and modern workflows. Built with React, Next.js, Node.js, and AI integrations where they add real value, from MVPs to platforms that scale.",
+    image: "/images/software-dev.webp",
+  },
+  {
+    title: "UX & Creative Support",
+    description:
+      "Supporting work that makes agentic products usable and clear: intuitive interfaces, branding, and digital strategy that help teams adopt and ship AI-enabled solutions with confidence.",
     image: "/images/creative-support.webp",
   },
 ];
@@ -33,8 +33,8 @@ export default function ServicesSection() {
     <section id="services" className="py-20 bg-[var(--color-bg-secondary)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
-          title="What We Do"
-          subtitle="We combine deep technical expertise with AI to deliver digital solutions that save time, cut costs, and drive real results."
+          title="How I Help"
+          subtitle="Tech professionals leveling up first. Agentic workflows are the core public offer. Software, UX, and creative work support that mission."
         />
 
         <div className="grid md:grid-cols-2 gap-8">

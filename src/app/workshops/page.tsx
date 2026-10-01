@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Workshops",
   description:
-    "Join MDJ Studios workshops and learn web development skills from industry professionals.",
+    "MDJ Studios workshops: learn web development skills from industry professionals.",
   alternates: {
     canonical: "https://mdjstudios.com/workshops",
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const speakers = [
   {
     name: "Daniel Scott",
-    role: "Senior Application Developer",
+    role: "AI Systems and Software Engineer and Technical Training Facilitator",
     image: "/images/daniel.jpg",
   },
   {

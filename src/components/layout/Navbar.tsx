@@ -69,7 +69,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             {/* <ThemeToggle /> */}
             <Button href="/#contact" size="sm">
-              Get a Quote
+              Level Up
             </Button>
           </div>
 
@@ -116,7 +116,7 @@ export default function Navbar() {
             ))}
             <div className="pt-3">
               <Button href="/#contact" size="lg" className="w-full">
-                Get a Quote
+                Level Up
               </Button>
             </div>
             <div className="pt-4 flex justify-center">

@@ -67,18 +67,21 @@ export default function ContactSection() {
     <section id="contact" className="py-20 bg-[var(--color-bg-secondary)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
-          title="Let's Work Together"
-          subtitle="Have a project in mind? Let's explore how AI can help."
+          title="Let's Connect"
+          subtitle="Tech professionals: ready to level up and build agentic AI workflows? Reach out."
         />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Left: info */}
           <div className="space-y-6">
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
-              Whether you need an AI-powered application, a new website, or
-              help automating your workflows, we&apos;re here to bring your
-              vision to life. Fill out the form and we&apos;ll get back to you
-              shortly.
+              Primary focus: helping tech professionals level up with accessible
+              software and agentic AI workflows they can actually run. Tell me
+              what you&apos;re working on and I&apos;ll get back to you shortly.
+            </p>
+            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              Companies hiring for training, facilitation, or AI systems work:
+              I&apos;m open to that conversation too.
             </p>
 
             <div className="space-y-4">
@@ -122,7 +125,7 @@ export default function ContactSection() {
                   />
                 </svg>
                 <span className="text-sm text-[var(--color-text-secondary)]">
-                  We typically respond within 24 hours
+                  I typically respond within 24 hours
                 </span>
               </div>
             </div>
@@ -171,7 +174,7 @@ export default function ContactSection() {
             <div>
               <textarea
                 name="message"
-                placeholder="Tell us about your project..."
+                placeholder="What are you working on? Training, workflows, or a hire conversation..."
                 value={formState.message}
                 onChange={handleChange}
                 required

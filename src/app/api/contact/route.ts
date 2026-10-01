@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     // 1. Save to Google Sheets first
     await appendContactToSheet(sanitizedData);
 
-    // 2. Send email notification (non-blocking — failure doesn't affect the response)
+    // 2. Send email notification (non-blocking - failure doesn't affect the response)
     try {
       await sendContactNotification(sanitizedData);
     } catch (emailError) {
