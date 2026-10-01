@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Daniel Scott",
   },
   description:
-    "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows. Work runs through MDJ Studios.",
+    "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows.",
   keywords: [
     "agentic AI",
     "agentic workflows",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     siteName: "MDJ Studios",
     title: "Daniel Scott | AI Systems and Software Engineer and Technical Training Facilitator",
     description:
-      "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows. Work runs through MDJ Studios.",
+      "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows.",
     images: [
       {
         url: "/images/daniel-scott-cropped.jpg",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Daniel Scott | AI Systems and Software Engineer and Technical Training Facilitator",
     description:
-      "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows. Work runs through MDJ Studios.",
+      "Dan Scott has been teaching since 2017. He is an AI Systems and Software Engineer and Technical Training Facilitator with 1000+ trained. He helps tech professionals level up and build agentic AI workflows.",
     images: [
       {
         url: "/images/daniel-scott-cropped.jpg",
@@ -174,7 +174,7 @@ export default function RootLayout({
                   name: "MDJ Studios",
                   url: "https://mdjstudios.com",
                   description:
-                    "AI systems, agentic workflows, and technical training for tech professionals leveling up in the agentic AI era. Work runs through MDJ Studios.",
+                    "AI systems, agentic workflows, and technical training for tech professionals leveling up in the agentic AI era.",
                   priceRange: "$$",
                   areaServed: {
                     "@type": "GeoCircle",
@@ -237,7 +237,7 @@ export default function RootLayout({
                   image:
                     "https://mdjstudios.com/images/daniel-scott-cropped.jpg",
                   description:
-                    "AI Systems and Software Engineer and Technical Training Facilitator. Helps tech professionals level up and build agentic AI workflows. Teaching since 2017 with 1000+ trained. Work runs through MDJ Studios. Senior Lead Instructor at General Assembly.",
+                    "AI Systems and Software Engineer and Technical Training Facilitator. Helps tech professionals level up and build agentic AI workflows. Teaching since 2017 with 1000+ trained. Senior Lead Technical Trainer at General Assembly.",
                   worksFor: {
                     "@id": "https://mdjstudios.com/#organization",
                   },

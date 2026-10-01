@@ -55,7 +55,7 @@ export default function HomePage() {
                 I&apos;ve been teaching since 2017 and have trained 1000+
                 professionals. I make software and AI-enabled solutions
                 accessible, with a focus on building agentic workflows you can
-                actually run. Work runs through MDJ Studios.
+                actually run.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button href="/#contact" size="lg">
@@ -106,12 +106,12 @@ export default function HomePage() {
                 Studios since 2014. Today I work as an AI Systems and Software
                 Engineer and Technical Training Facilitator. I help tech
                 professionals level up and build agentic AI workflows, and I also
-                serve as a Senior Lead Instructor at General Assembly.
+                serve as a Senior Lead Technical Trainer at General Assembly.
               </p>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
                 I learn in public: I share what I&apos;m trying and implementing
                 as I go, because that is how I work. Clear, hands-on, and focused
-                on what ships. MDJ Studios is the backbone behind the work.
+                on what ships.
               </p>
               <Button href="/about" variant="secondary">
                 Read My Full Story

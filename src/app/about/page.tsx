@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "About Daniel Scott",
   description:
-    "Daniel Scott is an AI Systems and Software Engineer and Technical Training Facilitator. Teaching since 2017 with 1000+ trained. He helps tech professionals level up and build agentic AI workflows. Work runs through MDJ Studios.",
+    "Daniel Scott is an AI Systems and Software Engineer and Technical Training Facilitator. Teaching since 2017 with 1000+ trained. He helps tech professionals level up and build agentic AI workflows.",
   alternates: {
     canonical: "https://mdjstudios.com/about",
   },
@@ -21,7 +21,7 @@ const experience = [
     role: "AI Systems and Software Engineer and Technical Training Facilitator",
     period: "2014 - Present",
     description:
-      "MDJ Studios is the backbone behind the work. Builds AI-enabled applications, agentic workflows, and custom automations. Helps tech professionals level up their skillset in the agentic AI era. Mentors aspiring developers and AI practitioners through workshops, speaking engagements, and courses.",
+      "Builds AI-enabled applications, agentic workflows, and custom automations. Helps tech professionals level up their skillset in the agentic AI era. Mentors aspiring developers and AI practitioners through workshops, speaking engagements, and courses.",
   },
   {
     company: "General Assembly",
@@ -101,8 +101,7 @@ export default function AboutPage() {
             </p>
             <p>
               I&apos;ve been teaching since 2017 and have trained 1000+
-              professionals. Clear, hands-on, and focused on what ships. MDJ
-              Studios is the backbone behind the work. If you&apos;re a company
+              professionals. Clear, hands-on, and focused on what ships. If you&apos;re a company
               hiring for training, facilitation, or AI systems work, I&apos;m
               open to that conversation too.
             </p>
@@ -114,7 +113,7 @@ export default function AboutPage() {
               years while finishing my career in finance. That same instinct
               (recognizing where technology is heading and moving toward it
               early) now drives the focus on agentic AI workflows. Today I also
-              serve as a Senior Lead Instructor at General Assembly, where I was
+              serve as a Senior Lead Technical Trainer at General Assembly, where I was
               recognized as a Distinguished Faculty Member.
             </p>
           </div>

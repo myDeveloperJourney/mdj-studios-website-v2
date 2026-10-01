@@ -11,7 +11,7 @@ const services = [
   {
     title: "Technical Training & Facilitation",
     description:
-      "Hands-on training for tech professionals leveling up in the agentic AI era. Clear, accessible facilitation focused on what ships. Teaching since 2017 with 1000+ professionals trained, including work as a Senior Lead Instructor at General Assembly.",
+      "Hands-on training for tech professionals leveling up in the agentic AI era. Clear, accessible facilitation focused on what ships. Teaching since 2017 with 1000+ professionals trained, including work as a Senior Lead Technical Trainer at General Assembly.",
     image: "/images/workshop_banner.jpg",
   },
   {

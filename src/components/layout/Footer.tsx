@@ -28,7 +28,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-[var(--color-text-secondary)] mb-4 leading-relaxed">
-              AI Systems and Software Engineer and Technical Training Facilitator helping tech professionals level up in the agentic AI era. Work runs through MDJ Studios.
+              AI Systems and Software Engineer and Technical Training Facilitator helping tech professionals level up in the agentic AI era.
             </p>
             <SocialLinks iconSize="sm" />
           </div>
