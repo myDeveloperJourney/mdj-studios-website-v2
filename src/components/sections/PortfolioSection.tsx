@@ -36,8 +36,8 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
-          title="Our Work"
-          subtitle="A selection of projects we've delivered for clients across different industries."
+          title="Selected Work"
+          subtitle="Selected builds that support real workflows across different industries."
         />
 
         <div className="grid md:grid-cols-3 gap-8">

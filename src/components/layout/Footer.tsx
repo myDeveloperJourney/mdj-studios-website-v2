@@ -28,7 +28,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-[var(--color-text-secondary)] mb-4 leading-relaxed">
-              Building AI-powered software and training professionals to work smarter with AI.
+              AI Systems and Software Engineer and Technical Training Facilitator helping tech professionals level up in the agentic AI era. Work runs through MDJ Studios.
             </p>
             <SocialLinks iconSize="sm" />
           </div>
@@ -65,16 +65,16 @@ export default function Footer() {
           {/* CTA column */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Ready to Start?
+              Level Up
             </h3>
             <p className="text-sm text-[var(--color-text-secondary)] mb-4">
-              Let&apos;s build something great together.
+              Ready to build agentic AI workflows you can actually run?
             </p>
             <Link
               href="/#contact"
               className="inline-flex items-center text-sm font-medium text-[var(--color-primary)] hover:underline"
             >
-              Get in touch
+              Level up your skillset
               <svg
                 className="ml-1 w-4 h-4"
                 fill="none"

@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "About Daniel Scott",
   description:
-    "Learn more about Daniel Scott, founder of MDJ Studios — his journey from the U.S. Army to tech and AI, his expertise in building AI-powered solutions, and his work training professionals to leverage AI.",
+    "Daniel Scott is an AI Systems and Software Engineer and Technical Training Facilitator. Teaching since 2017 with 1000+ trained. He helps tech professionals level up and build agentic AI workflows. Work runs through MDJ Studios.",
   alternates: {
     canonical: "https://mdjstudios.com/about",
   },
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 const experience = [
   {
     company: "MDJ Studios",
-    role: "Owner | Senior Application Developer",
+    role: "AI Systems and Software Engineer and Technical Training Facilitator",
     period: "2014 - Present",
     description:
-      "Established a successful digital agency, building websites, web applications, SaaS platforms, and AI-powered solutions for small businesses and non-profits. Specializes in agentic AI systems and intelligent automations that help businesses save time and reduce operational costs. Mentors aspiring developers and AI practitioners through free workshops and community events.",
+      "MDJ Studios is the backbone behind the work. Builds AI-enabled applications, agentic workflows, and custom automations. Helps tech professionals level up their skillset in the agentic AI era. Mentors aspiring developers and AI practitioners through workshops, speaking engagements, and courses.",
   },
   {
     company: "General Assembly",
@@ -73,8 +73,8 @@ export default function AboutPage() {
       <div className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
-          title="Meet the Founder"
-          subtitle="The story behind MDJ Studios."
+          title="About Daniel Scott"
+          subtitle="AI Systems and Software Engineer and Technical Training Facilitator."
         />
 
         {/* Bio Section */}
@@ -92,32 +92,30 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-2 space-y-4 text-[var(--color-text-secondary)] leading-relaxed">
             <p>
-              Daniel is originally from Fort Worth, TX, where he earned a
-              Bachelor&apos;s degree in Business Science with a concentration in
-              Finance. After spending a decade in the financial industry, he saw
-              the potential of software automation to disrupt his role.
-              Determined to stay ahead of the curve, Daniel taught himself
-              software development over two years, all while finishing his
-              career in finance. That same instinct — recognizing where
-              technology is heading and moving toward it early — now drives his
-              focus on AI-powered solutions.
+              I&apos;m an AI Systems and Software Engineer and Technical
+              Training Facilitator. I help tech professionals level up by making
+              software and AI-enabled solutions accessible, with a focus on
+              building agentic workflows they can actually run. I learn in
+              public: I share what I&apos;m trying and implementing as I go,
+              because that is how I work, not a side project.
             </p>
             <p>
-              Daniel now leads MDJ Studios, a software development studio that
-              builds AI-enabled applications and custom automations for small
-              businesses and non-profits. Since 2017, he has shared his
-              expertise as a Senior Lead Instructor at General Assembly, where
-              he trains professionals to augment their workflows with generative
-              AI tools and was recognized as a Distinguished Faculty Member for
-              exemplary performance.
+              I&apos;ve been teaching since 2017 and have trained 1000+
+              professionals. Clear, hands-on, and focused on what ships. MDJ
+              Studios is the backbone behind the work. If you&apos;re a company
+              hiring for training, facilitation, or AI systems work, I&apos;m
+              open to that conversation too.
             </p>
             <p>
-              Daniel is passionate about building software that empowers people
-              and helping businesses harness AI to work more efficiently. In
-              addition to running his studio, he is actively involved in
-              mentoring the next generation of developers and AI practitioners
-              through community events, speaking engagements, workshops, and
-              courses.
+              Originally from Fort Worth, TX, I earned a Bachelor&apos;s degree
+              in Business Science with a concentration in Finance. After a
+              decade in the financial industry, I saw software automation
+              reshaping the work. I taught myself software development over two
+              years while finishing my career in finance. That same instinct
+              (recognizing where technology is heading and moving toward it
+              early) now drives the focus on agentic AI workflows. Today I also
+              serve as a Senior Lead Instructor at General Assembly, where I was
+              recognized as a Distinguished Faculty Member.
             </p>
           </div>
         </div>

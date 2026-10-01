@@ -20,7 +20,7 @@ export async function sendContactNotification(data: {
   const result = await resend.emails.send({
     from: "MDJ Studios <admin@messages.mdjstudios.com>",
     to: recipientEmail,
-    subject: "New Contact Form Submission — MDJ Studios",
+    subject: "New Contact Form Submission - MDJ Studios",
     html: `
 <!DOCTYPE html>
 <html>
