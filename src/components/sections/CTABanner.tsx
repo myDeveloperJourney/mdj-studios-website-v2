@@ -13,32 +13,17 @@ export default function CTABanner({
   description,
   buttonText,
   buttonHref,
-  variant = "primary",
 }: CTABannerProps) {
-  const bgClass =
-    variant === "accent"
-      ? "bg-[var(--color-accent)]"
-      : "bg-[var(--color-primary)]";
-
   return (
-    <section className={`${bgClass} py-16`}>
+    <section className="border-y border-[var(--color-border)] bg-[var(--color-bg)] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-text)] mb-3">
           {title}
         </h2>
         {description && (
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">{description}</p>
+          <p className="text-[var(--color-text-secondary)] mb-6 max-w-2xl mx-auto">{description}</p>
         )}
-        <Button
-          href={buttonHref}
-          variant={variant === "accent" ? "primary" : "secondary"}
-          size="lg"
-          className={
-            variant === "accent"
-              ? ""
-              : "!border-white !text-white hover:!bg-white/10"
-          }
-        >
+        <Button href={buttonHref} variant="primary" size="lg">
           {buttonText}
         </Button>
       </div>

@@ -3,38 +3,49 @@
 @tailwind utilities;
 
 :root {
-  /* Primary: Indigo */
-  --color-primary: #4f46e5;
-  --color-primary-hover: #4338ca;
-  --color-primary-light: #e0e7ff;
+  /* Primary: Near-white */
+  --color-primary: #ffffff;
+  --color-primary-hover: #e5e5e5;
+  --color-primary-light: #262626;
 
-  /* Secondary: Gold (from logo) */
-  --color-accent: #eeb30d;
-  --color-accent-hover: #d4a00c;
+  /* Secondary: Neutral light */
+  --color-accent: #d4d4d4;
+  --color-accent-hover: #ffffff;
 
   /* Neutrals */
-  --color-bg: #ffffff;
-  --color-bg-secondary: #f9fafb;
-  --color-text: #111827;
-  --color-text-secondary: #6b7280;
-  --color-border: #e5e7eb;
-  --color-surface: #ffffff;
-  --color-surface-hover: #f3f4f6;
+  --color-bg: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-text: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #262626;
+  --color-surface: #111111;
+  --color-surface-hover: #1a1a1a;
 
   /* Shadows */
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.45);
 }
 
 [data-theme="dark"] {
-  --color-bg: #0f172a;
-  --color-bg-secondary: #1e293b;
-  --color-text: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-border: #334155;
-  --color-surface: #1e293b;
-  --color-surface-hover: #334155;
-  --color-primary-light: #312e81;
-  --color-shadow: rgba(0, 0, 0, 0.3);
+  /* Primary: Near-white */
+  --color-primary: #ffffff;
+  --color-primary-hover: #e5e5e5;
+  --color-primary-light: #262626;
+
+  /* Secondary: Neutral light */
+  --color-accent: #d4d4d4;
+  --color-accent-hover: #ffffff;
+
+  /* Neutrals */
+  --color-bg: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-text: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #262626;
+  --color-surface: #111111;
+  --color-surface-hover: #1a1a1a;
+
+  /* Shadows */
+  --color-shadow: rgba(0, 0, 0, 0.45);
 }
 
 body {
@@ -51,7 +62,7 @@ html {
 /* Selection color */
 ::selection {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: #0a0a0a;
 }
 
 @layer utilities {

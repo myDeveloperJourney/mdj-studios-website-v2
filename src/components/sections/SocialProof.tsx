@@ -7,13 +7,13 @@ const stats = [
 
 export default function SocialProof() {
   return (
-    <section className="bg-[var(--color-primary)] text-white py-12">
+    <section className="border-y border-[var(--color-border)] bg-[var(--color-bg)] py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="text-3xl sm:text-4xl font-bold">{stat.value}</p>
-              <p className="mt-1 text-sm text-indigo-200">{stat.label}</p>
+              <p className="text-3xl sm:text-4xl font-bold text-[var(--color-text)]">{stat.value}</p>
+              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{stat.label}</p>
             </div>
           ))}
         </div>

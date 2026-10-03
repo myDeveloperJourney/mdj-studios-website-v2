@@ -173,7 +173,7 @@ export default async function TagPage({
                 aria-current={active ? "page" : undefined}
                 className={
                   active
-                    ? "inline-flex items-center rounded-full bg-[var(--color-primary)] px-3 py-1 text-xs font-medium text-white"
+                    ? "inline-flex items-center rounded-full bg-[var(--color-primary)] px-3 py-1 text-xs font-medium text-[#0a0a0a]"
                     : "inline-flex items-center rounded-full border border-[var(--color-border)] px-3 py-1 text-xs font-medium text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 }
               >
@@ -181,7 +181,7 @@ export default async function TagPage({
                 <span
                   className={
                     active
-                      ? "ml-1.5 text-white/80"
+                      ? "ml-1.5 text-[#0a0a0a]/80"
                       : "ml-1.5 text-[var(--color-text-secondary)]/70"
                   }
                 >

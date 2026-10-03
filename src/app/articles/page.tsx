@@ -129,7 +129,7 @@ export default function ArticlesIndexPage() {
               aria-label="Filter by tag"
               className="mb-10 flex flex-wrap gap-2"
             >
-              <span className="inline-flex items-center rounded-full bg-[var(--color-primary)] px-3 py-1 text-xs font-medium text-white">
+              <span className="inline-flex items-center rounded-full bg-[var(--color-primary)] px-3 py-1 text-xs font-medium text-[#0a0a0a]">
                 All
               </span>
               {tags.map((t) => (

@@ -367,7 +367,7 @@ export default async function ArticlePage({
               ) : (
                 <div
                   aria-hidden
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)] text-white font-semibold"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)] text-[#0a0a0a] font-semibold"
                 >
                   {article.author.name
                     .split(" ")
