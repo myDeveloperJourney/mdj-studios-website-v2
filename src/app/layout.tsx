@@ -195,7 +195,7 @@ export default function RootLayout({
                           "@type": "Service",
                           name: "Agentic AI Workflows",
                           description:
-                            "Help tech professionals design and run agentic AI workflows they can actually ship.",
+                            "I help tech professionals get better at designing agentic AI workflows.",
                         },
                       },
                       {
