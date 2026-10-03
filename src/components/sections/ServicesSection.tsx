@@ -6,7 +6,8 @@ const services = [
     title: "Agentic AI Workflows",
     description:
       "The core offer: help tech professionals design and run agentic AI workflows they can actually ship. From intelligent agents that handle routine tasks to custom automations that save hours every week, I turn agentic AI into practical systems that raise your skillset and free you to focus on higher-value work.",
-    image: "/images/ai-solutions.webp",
+    // Photo by Matheus Bertelli on Pexels.
+    image: "/images/agentic-ai-workflows.jpg",
   },
   {
     title: "Technical Training & Facilitation",
