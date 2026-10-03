@@ -109,9 +109,8 @@ export default function HomePage() {
                 serve as a Senior Lead Technical Trainer at General Assembly.
               </p>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                I learn in public: I share what I&apos;m trying and implementing
-                as I go, because that is how I work. Clear, hands-on, and focused
-                on what ships.
+                I learn in public, sharing what I&apos;m experimenting with and
+                implementing as I go. Clear, hands-on, and focused on what ships.
               </p>
               <Button href="/about" variant="secondary">
                 Read My Full Story

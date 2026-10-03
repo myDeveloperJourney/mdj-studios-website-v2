@@ -93,11 +93,10 @@ export default function AboutPage() {
           <div className="md:col-span-2 space-y-4 text-[var(--color-text-secondary)] leading-relaxed">
             <p>
               I&apos;m an AI Systems and Software Engineer and Technical
-              Training Facilitator. I help tech professionals level up by making
-              software and AI-enabled solutions accessible, with a focus on
-              building agentic workflows they can actually run. I learn in
-              public: I share what I&apos;m trying and implementing as I go,
-              because that is how I work, not a side project.
+              Training Facilitator. I learn in public, sharing what I&apos;m
+              experimenting with and implementing as I go. I also help tech
+              professionals level up by making software and AI-enabled solutions
+              accessible, with a focus on building agentic workflows.
             </p>
             <p>
               I&apos;ve been teaching since 2017 and have trained 1000+
