@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
+import ChatWidget from "@/components/chat/ChatWidget";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
@@ -292,17 +292,7 @@ export default function RootLayout({
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
         <Footer />
 
-        {/* Crisp Chat */}
-        <Script id="crisp-chat-init" strategy="lazyOnload">
-          {`
-            window.$crisp = [];
-            window.CRISP_WEBSITE_ID = "e22665a5-3cc5-4234-bd14-b5fea0d7b279";
-          `}
-        </Script>
-        <Script
-          src="https://client.crisp.chat/l.js"
-          strategy="lazyOnload"
-        />
+        <ChatWidget />
 
         <Analytics />
         <SpeedInsights />
