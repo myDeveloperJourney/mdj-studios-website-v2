@@ -35,7 +35,7 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeading
           title="How I Help"
-          subtitle="Tech professionals leveling up first. Agentic workflows are the core public offer. Software, UX, and creative work support that mission."
+          subtitle="Tech professionals leveling up first. Software, UX, and creative work support that mission."
         />
 
         <div className="grid md:grid-cols-2 gap-8">

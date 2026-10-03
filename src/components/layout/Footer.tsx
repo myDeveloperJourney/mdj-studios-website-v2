@@ -67,9 +67,6 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
               Level Up
             </h3>
-            <p className="text-sm text-[var(--color-text-secondary)] mb-4">
-              Ready to build agentic AI workflows you can actually run?
-            </p>
             <Link
               href="/#contact"
               className="inline-flex items-center text-sm font-medium text-[var(--color-primary)] hover:underline"
