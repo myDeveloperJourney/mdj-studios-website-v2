@@ -75,9 +75,7 @@ export default function ContactSection() {
           {/* Left: info */}
           <div className="space-y-6">
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
-              Primary focus: helping tech professionals level up with accessible
-              software and agentic AI workflows they can actually run. Tell me
-              what you&apos;re working on and I&apos;ll get back to you shortly.
+              Tell me what you&apos;re working on and I&apos;ll get back to you shortly.
             </p>
             <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
               Companies hiring for training, facilitation, or AI systems work:

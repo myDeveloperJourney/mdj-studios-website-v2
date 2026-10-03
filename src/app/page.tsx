@@ -53,9 +53,7 @@ export default function HomePage() {
               </p>
               <p className="mt-3 text-base text-[var(--color-text-secondary)] max-w-xl leading-relaxed">
                 I&apos;ve been teaching since 2017 and have trained 1000+
-                professionals. I make software and AI-enabled solutions
-                accessible, with a focus on building agentic workflows you can
-                actually run.
+                professionals.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button href="/#contact" size="lg">
@@ -133,7 +131,7 @@ export default function HomePage() {
       {/* CTA Banner */}
       <CTABanner
         title="Ready to level up in the agentic AI era?"
-        description="I help tech professionals build agentic AI workflows they can actually run. Clear, hands-on, and focused on what ships. Companies hiring for training, facilitation, or AI systems work are welcome too."
+        description="Clear, hands-on, and focused on what ships. Companies hiring for training, facilitation, or AI systems work are welcome too."
         buttonText="Level Up Your Skillset"
         buttonHref="/#contact"
       />
