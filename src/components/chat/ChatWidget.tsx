@@ -296,7 +296,7 @@ function ChatPanel() {
                     }
                   }}
                   rows={2}
-                  placeholder="What are you working on?"
+                  placeholder="What would you like to know about Dan or MDJ Studios?"
                   className={`${fieldClass} resize-none`}
                 />
                 <div className="mt-2 flex gap-2">
