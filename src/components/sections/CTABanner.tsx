@@ -23,11 +23,11 @@ export default function CTABanner({
   return (
     <section className={`${bgClass} py-16`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0a0a0a] mb-3">
           {title}
         </h2>
         {description && (
-          <p className="text-white/80 mb-6 max-w-2xl mx-auto">{description}</p>
+          <p className="text-[#0a0a0a]/80 mb-6 max-w-2xl mx-auto">{description}</p>
         )}
         <Button
           href={buttonHref}
@@ -36,7 +36,7 @@ export default function CTABanner({
           className={
             variant === "accent"
               ? ""
-              : "!border-white !text-white hover:!bg-white/10"
+              : "!border-[#0a0a0a] !text-[#0a0a0a] hover:!bg-black/10"
           }
         >
           {buttonText}

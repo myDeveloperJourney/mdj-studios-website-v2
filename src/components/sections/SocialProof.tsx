@@ -7,7 +7,7 @@ const stats = [
 
 export default function SocialProof() {
   return (
-    <section className="bg-[var(--color-primary)] text-white py-12">
+    <section className="bg-[var(--color-primary)] text-[#0a0a0a] py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {stats.map((stat) => (
