@@ -25,12 +25,6 @@ const projects = [
   },
 ];
 
-function getScreenshotUrl(siteUrl: string): string {
-  const useScreenshots = !!process.env.SCREENSHOTONE_ACCESS_KEY;
-  if (!useScreenshots) return "";
-  return `/api/screenshot?url=${encodeURIComponent(siteUrl)}`;
-}
-
 export default function PortfolioSection() {
   return (
     <section id="portfolio" className="py-20">
@@ -41,11 +35,7 @@ export default function PortfolioSection() {
         />
 
         <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project) => {
-            const screenshotUrl = getScreenshotUrl(project.href);
-            const imageSrc = screenshotUrl || project.fallbackImage;
-
-            return (
+          {projects.map((project) => (
             <a
               key={project.title}
               href={project.href}
@@ -57,10 +47,9 @@ export default function PortfolioSection() {
             >
               <div className="relative w-full aspect-video overflow-hidden">
                 <Image
-                  src={imageSrc}
+                  src={project.fallbackImage}
                   alt={`Screenshot of ${project.title}`}
                   fill
-                  unoptimized={!!screenshotUrl}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
@@ -86,8 +75,7 @@ export default function PortfolioSection() {
                 </p>
               </div>
             </a>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
