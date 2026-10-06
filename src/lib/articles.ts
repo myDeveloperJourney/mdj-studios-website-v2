@@ -87,6 +87,7 @@ export type TagSummary = {
 export const DEFAULT_AUTHOR: ArticleAuthor = {
   name: "Dan Scott",
   title: "Founder, MDJ Studios",
+  avatar: "/images/daniel-scott-cropped.jpg",
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "articles");
