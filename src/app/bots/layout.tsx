@@ -4,6 +4,7 @@ import { Roboto_Mono } from "next/font/google";
 import BotBayHeader from "@/components/bots/BotBayHeader";
 import BotBayFooter from "@/components/bots/BotBayFooter";
 import PlaceholderBanner from "@/components/bots/PlaceholderBanner";
+import { BOTS_LAUNCHED } from "@/lib/bots-launch";
 import styles from "./bots.module.css";
 
 const dDin = localFont({
@@ -30,6 +31,8 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 });
 
+// When BOTS_LAUNCHED is false, keep noindex. When true, omit robots so root
+// layout defaults (index, follow) apply. See src/lib/bots-launch.ts.
 export const metadata: Metadata = {
   title: {
     default: "Bot Bay",
@@ -37,11 +40,14 @@ export const metadata: Metadata = {
   },
   description:
     "Copyable playbooks for tightly scoped AI assistants. One bot, one job, clear rules.",
-  // Remove noindex at launch.
-  robots: {
-    index: false,
-    follow: false,
-  },
+  ...(BOTS_LAUNCHED
+    ? {}
+    : {
+        robots: {
+          index: false,
+          follow: false,
+        },
+      }),
 };
 
 export default function BotsLayout({
