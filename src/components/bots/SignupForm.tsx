@@ -5,7 +5,7 @@ import styles from "@/app/bots/bots.module.css";
 
 export type SignupList = "launch-log" | "setup-waitlist";
 
-type Status = "idle" | "submitting" | "error" | "notice";
+type Status = "idle" | "submitting" | "error" | "notice" | "success";
 
 type Props = {
   list: SignupList;
@@ -55,18 +55,26 @@ export default function SignupForm({
         return;
       }
 
-      if (!res.ok || data.ok === false) {
-        setError(data.error || "Something went wrong. Try again.");
+      if (res.ok && data.ok === true) {
+        setStatus("success");
+        return;
+      }
+
+      if (res.status === 400 && data.error) {
+        setError(data.error);
         setStatus("error");
         return;
       }
 
-      setStatus("notice");
+      setError("Something went wrong. Please try again.");
+      setStatus("error");
     } catch {
-      setError("Something went wrong. Try again.");
+      setError("Something went wrong. Please try again.");
       setStatus("error");
     }
   }
+
+  const locked = status === "submitting" || status === "success";
 
   return (
     <div className={styles.signupForm}>
@@ -85,14 +93,14 @@ export default function SignupForm({
           }}
           placeholder={placeholder}
           aria-label="Email"
-          disabled={status === "submitting"}
+          disabled={locked}
           maxLength={200}
           autoComplete="email"
         />
         <button
           type="submit"
           className={`${styles.btn} ${styles.btnSolid}`}
-          disabled={status === "submitting"}
+          disabled={locked}
         >
           {status === "submitting" ? "Sending..." : buttonLabel}
         </button>
@@ -105,6 +113,12 @@ export default function SignupForm({
       {status === "notice" ? (
         <p className={styles.signupNotice} role="status">
           Signups open soon. Thanks for your interest.
+        </p>
+      ) : null}
+      {status === "success" ? (
+        <p className={styles.signupNotice} role="status">
+          {/* Placeholder copy: final success text from the writer. */}
+          You&apos;re on the list.
         </p>
       ) : null}
     </div>

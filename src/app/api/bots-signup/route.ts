@@ -1,13 +1,19 @@
 /**
  * Bot Bay email signup endpoint.
- * A provider (or a Google Sheets tab via src/lib/google-sheets.ts) gets wired here later.
- * Until then, valid requests return 503 with connected:false. Do not persist or read env.
+ * When BEEHIIV_API_KEY and BEEHIIV_PUBLICATION_ID are both set (non-empty after trim),
+ * valid requests create a Beehiiv subscription and return 200 { ok: true, connected: true }.
+ * If Beehiiv is configured but the request fails, return 502 with a generic error.
+ * If either env var is missing, return 503 with connected:false (form not wired yet).
  */
 
 import { NextResponse } from "next/server";
+import {
+  createBeehiivSubscription,
+  getBeehiivConfig,
+  type SignupList,
+} from "@/lib/beehiiv";
 
 const LISTS = ["launch-log", "setup-waitlist"] as const;
-type SignupList = (typeof LISTS)[number];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -48,13 +54,30 @@ export async function POST(request: Request) {
     );
   }
 
+  const config = getBeehiivConfig(process.env);
+  if (!config) {
+    return NextResponse.json(
+      {
+        ok: false,
+        connected: false,
+        message:
+          "Signups open soon. This form is not connected to a provider yet.",
+      },
+      { status: 503 }
+    );
+  }
+
+  const result = await createBeehiivSubscription(email, list, config);
+  if (result.ok) {
+    return NextResponse.json({ ok: true, connected: true }, { status: 200 });
+  }
+
   return NextResponse.json(
     {
       ok: false,
-      connected: false,
-      message:
-        "Signups open soon. This form is not connected to a provider yet.",
+      connected: true,
+      error: "Could not sign you up right now. Please try again.",
     },
-    { status: 503 }
+    { status: 502 }
   );
 }
