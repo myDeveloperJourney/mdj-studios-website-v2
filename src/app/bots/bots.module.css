@@ -30,6 +30,8 @@
   font: 16px / 1.5 var(--sans);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  /* clip, not hidden: hidden creates a scroll container and breaks sticky header/banner. */
+  overflow-x: clip;
 }
 
 .root *,
@@ -417,7 +419,7 @@ a.btnSolid:hover {
 /* ---------- Steps ---------- */
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid var(--white-25);
 }
@@ -450,7 +452,7 @@ a.btnSolid:hover {
 /* ---------- Cards ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -524,7 +526,7 @@ a.btnSolid:hover {
 
 .trow {
   display: grid;
-  grid-template-columns: 120px 1fr 200px 40px;
+  grid-template-columns: 120px minmax(0, 1fr) 200px 40px;
   gap: 24px;
   align-items: center;
   padding: 28px 0;
@@ -563,7 +565,7 @@ a.btnSolid:hover {
 /* ---------- Newsletter band ---------- */
 .band {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 60px;
   align-items: start;
 }
@@ -603,6 +605,7 @@ a.btnSolid:hover {
 
 .input {
   flex: 1;
+  min-width: 0;
   height: 50px;
   background: transparent;
   border: 1px solid var(--white-35);
@@ -632,7 +635,7 @@ a.btnSolid:hover {
   border-radius: 4px;
   padding: 28px;
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 96px minmax(0, 1fr);
   gap: 20px;
   align-items: center;
 }
@@ -672,7 +675,7 @@ a.btnSolid:hover {
 
 .fgrid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
   gap: 40px;
 }
 
@@ -852,7 +855,7 @@ a.btnSolid:hover {
 /* ---------- Single playbook ---------- */
 .pbHero {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 60px;
   align-items: end;
   padding: 80px 0 64px;
@@ -876,7 +879,7 @@ a.btnSolid:hover {
 
 .facts {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--white-25);
   border-bottom: 1px solid var(--white-10);
 }
@@ -909,9 +912,13 @@ a.btnSolid:hover {
 
 .pbLayout {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 80px;
   padding: 64px 0 40px;
+}
+
+.pbLayout > * {
+  min-width: 0;
 }
 
 .toc {
@@ -962,7 +969,7 @@ a.btnSolid:hover {
 
 .two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
 }
 
@@ -1021,7 +1028,7 @@ a.btnSolid:hover {
 
 .conn {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 24px;
 }
@@ -1072,6 +1079,7 @@ a.btnSolid:hover {
 }
 
 .tblWrap {
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -1134,7 +1142,7 @@ a.btnSolid:hover {
 
 .rules {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -1201,6 +1209,7 @@ a.btnSolid:hover {
   color: var(--white-90);
   padding: 24px;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
   margin: 0;
 }
 
@@ -1242,7 +1251,7 @@ a.btnSolid:hover {
 
 .featuredTut {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   margin-bottom: 56px;
   border: 1px solid var(--white-15);
   border-radius: 4px;
@@ -1303,6 +1312,10 @@ a.btnSolid:hover {
   padding-top: 0;
 }
 
+.articleLayout > * {
+  min-width: 0;
+}
+
 .article {
   max-width: 760px;
 }
@@ -1342,7 +1355,9 @@ a.btnSolid:hover {
   border: 1px solid var(--white-15);
   border-radius: 4px;
   padding: 20px;
+  max-width: 100%;
   overflow-x: auto;
+  overflow-wrap: anywhere;
   font-family: var(--mono);
   font-size: 13px;
   line-height: 1.6;
@@ -1353,16 +1368,18 @@ a.btnSolid:hover {
 .articleProse :global(code) {
   font-family: var(--mono);
   font-size: 0.9em;
+  overflow-wrap: anywhere;
 }
 
 .articleProse :global(a) {
   text-decoration: underline;
   color: var(--white-90);
+  overflow-wrap: anywhere;
 }
 
 .pager {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
   margin-top: 60px;
 }
@@ -1488,7 +1505,7 @@ a.btnSolid:hover {
 }
 
 .stepsFour {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* ---------- Responsive ---------- */
@@ -1570,7 +1587,7 @@ a.btnSolid:hover {
   .grid,
   .band,
   .fgrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .step,
@@ -1585,7 +1602,7 @@ a.btnSolid:hover {
   }
 
   .trow {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 6px;
   }
 
@@ -1616,7 +1633,7 @@ a.btnSolid:hover {
   }
 
   .pbHero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
     padding: 56px 0 40px;
   }
@@ -1626,7 +1643,7 @@ a.btnSolid:hover {
   }
 
   .facts {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .fact + .fact {
@@ -1636,7 +1653,7 @@ a.btnSolid:hover {
   }
 
   .pbLayout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
 
@@ -1647,7 +1664,7 @@ a.btnSolid:hover {
   .two,
   .conn,
   .rules {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .scopeStatement {
@@ -1659,7 +1676,7 @@ a.btnSolid:hover {
   }
 
   .featuredTut {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .featuredTutPh {
@@ -1694,11 +1711,11 @@ a.btnSolid:hover {
   }
 
   .pager {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .stepsFour {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .soonHero {
