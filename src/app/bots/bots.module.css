@@ -577,12 +577,19 @@ a.btnSolid:hover {
 
 .signup {
   display: flex;
+  align-items: stretch;
   gap: 12px;
   max-width: 560px;
 }
 
 .signupForm .signup {
   margin-top: 0;
+}
+
+.signup .btn,
+.signup .btnSolid {
+  box-sizing: border-box;
+  min-height: 50px;
 }
 
 .signup .btn:disabled,
@@ -614,6 +621,17 @@ a.btnSolid:hover {
   color: var(--white-100);
   font-family: var(--sans);
   font-size: 15px;
+}
+
+.signup .input {
+  height: 50px;
+  min-height: 50px;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 0 16px;
+  border: 1px solid var(--white-35);
+  border-radius: 4px;
+  line-height: normal;
 }
 
 .input:disabled {
@@ -1566,10 +1584,17 @@ a.btnSolid:hover {
   }
 
   .hero .btnRow .btn,
-  .hero .btnRow .btnSolid,
+  .hero .btnRow .btnSolid {
+    width: 100%;
+    justify-content: center;
+  }
+
   .signup .btn,
   .signup .btnSolid {
     width: 100%;
+    height: 50px;
+    min-height: 50px;
+    box-sizing: border-box;
     justify-content: center;
   }
 
@@ -1612,6 +1637,12 @@ a.btnSolid:hover {
 
   .signup {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .signup .input {
+    flex: none;
+    width: 100%;
   }
 
   .fgrid {
