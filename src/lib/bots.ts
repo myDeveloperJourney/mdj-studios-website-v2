@@ -62,6 +62,8 @@ export type PlaybookFrontmatter = {
   approval: PlaybookApproval;
   setupPrompt: string;
   related?: string[];
+  image?: string;
+  imageAlt?: string;
   placeholder?: boolean;
 };
 
@@ -87,6 +89,8 @@ export type PlaybookMeta = {
   approval: PlaybookApproval;
   setupPrompt: string;
   related: string[];
+  image?: string;
+  imageAlt?: string;
   placeholder: boolean;
 };
 
@@ -101,6 +105,8 @@ export type TutorialFrontmatter = {
   date: string;
   category: string;
   readTime?: string;
+  cover?: string;
+  coverAlt?: string;
   placeholder?: boolean;
 };
 
@@ -111,6 +117,8 @@ export type TutorialMeta = {
   date: string;
   category: string;
   readTime?: string;
+  cover?: string;
+  coverAlt?: string;
   placeholder: boolean;
 };
 
@@ -247,6 +255,8 @@ function parsePlaybook({ filepath, raw }: RawEntry): Playbook {
     approval: fm.approval ?? { free: [], ask: [], never: [] },
     setupPrompt: fm.setupPrompt ?? "",
     related: asStringArray(fm.related),
+    image: typeof fm.image === "string" ? fm.image : undefined,
+    imageAlt: typeof fm.imageAlt === "string" ? fm.imageAlt : undefined,
     placeholder: Boolean(fm.placeholder),
     content,
   };
@@ -278,6 +288,8 @@ function parseTutorial({ filepath, raw }: RawEntry): Tutorial {
     date: normalizeDateString(fm.date),
     category: fm.category,
     readTime: fm.readTime,
+    cover: typeof fm.cover === "string" ? fm.cover : undefined,
+    coverAlt: typeof fm.coverAlt === "string" ? fm.coverAlt : undefined,
     placeholder: Boolean(fm.placeholder),
     content,
   };
@@ -324,6 +336,8 @@ function stripPlaybookContent(p: Playbook): PlaybookMeta {
     approval: p.approval,
     setupPrompt: p.setupPrompt,
     related: p.related,
+    image: p.image,
+    imageAlt: p.imageAlt,
     placeholder: p.placeholder,
   };
 }
@@ -336,6 +350,8 @@ function stripTutorialContent(t: Tutorial): TutorialMeta {
     date: t.date,
     category: t.category,
     readTime: t.readTime,
+    cover: t.cover,
+    coverAlt: t.coverAlt,
     placeholder: t.placeholder,
   };
 }

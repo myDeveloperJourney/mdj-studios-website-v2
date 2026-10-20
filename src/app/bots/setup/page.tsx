@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SignupForm from "@/components/bots/SignupForm";
 import styles from "../bots.module.css";
 
@@ -12,10 +13,16 @@ export default function SetupPage() {
   return (
     <>
       <section className={styles.soonHero}>
-        <div
-          className={`${styles.ph} ${styles.soonHeroPh}`}
-          data-label="Background image (placeholder)"
-        />
+        <div className={styles.soonHeroPh}>
+          <Image
+            src="/images/bots/setup-hero.webp"
+            alt="A half-assembled robot on a work platform in a dark assembly workshop"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.fillImg}
+          />
+        </div>
         <div className={styles.soonShade} />
         <div className={`${styles.wrap} ${styles.soonHeroWrap}`}>
           <span className={styles.status}>

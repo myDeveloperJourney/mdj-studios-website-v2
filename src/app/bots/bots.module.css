@@ -383,6 +383,24 @@ a.btnSolid:hover {
   position: absolute;
   inset: 0;
   border: 0;
+  background: var(--ph);
+  overflow: hidden;
+}
+
+.fillImg {
+  object-fit: cover;
+}
+
+.imgRightCenter {
+  object-position: right center;
+}
+
+.imgCenter35 {
+  object-position: center 35%;
+}
+
+.imgCenter40 {
+  object-position: center 40%;
 }
 
 .heroPh::after {
@@ -496,6 +514,9 @@ a.btnSolid:hover {
   border: 0;
   border-bottom: 1px solid var(--white-10);
   border-radius: 4px 4px 0 0;
+  position: relative;
+  background: var(--ph);
+  overflow: hidden;
 }
 
 .cardBody {
@@ -682,6 +703,10 @@ a.btnSolid:hover {
 
 .sponsorPh {
   aspect-ratio: 1 / 1;
+  position: relative;
+  background: var(--ph);
+  overflow: hidden;
+  border: 1px solid var(--white-10);
 }
 
 .sponsorPh::after {
@@ -914,6 +939,14 @@ a.btnSolid:hover {
 
 .pbHero .ph {
   aspect-ratio: 4 / 3;
+}
+
+.pbHeroPh {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  background: var(--ph);
+  overflow: hidden;
+  border: 1px solid var(--white-10);
 }
 
 .pbExcerpt {
@@ -1314,6 +1347,9 @@ a.btnSolid:hover {
   border-radius: 0;
   border: 0;
   border-right: 1px solid var(--white-10);
+  position: relative;
+  background: var(--ph);
+  overflow: hidden;
 }
 
 .featuredTutBody {
@@ -1352,6 +1388,10 @@ a.btnSolid:hover {
 .tutHeroPh {
   aspect-ratio: 21 / 9;
   margin-bottom: 64px;
+  position: relative;
+  background: var(--ph);
+  overflow: hidden;
+  border: 1px solid var(--white-10);
 }
 
 .articleLayout {
@@ -1494,6 +1534,8 @@ a.btnSolid:hover {
   border: 0;
   opacity: 0.6;
   border-radius: 0;
+  background: var(--ph);
+  overflow: hidden;
 }
 
 .soonShade {

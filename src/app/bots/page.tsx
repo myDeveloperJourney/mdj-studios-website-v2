@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SignupForm from "@/components/bots/SignupForm";
 import { getAllPlaybooks, getAllTutorials } from "@/lib/bots";
@@ -17,10 +18,16 @@ export default function BotsHomePage() {
   return (
     <>
       <section className={styles.hero}>
-        <div
-          className={`${styles.ph} ${styles.heroPh}`}
-          data-label="Hero image / looping video 16:9 (dark, cinematic)"
-        />
+        <div className={styles.heroPh}>
+          <Image
+            src="/images/bots/bots-hero.webp"
+            alt="A fleet of small robots lined up in a dark rocket hangar"
+            fill
+            priority
+            sizes="100vw"
+            className={`${styles.fillImg} ${styles.imgRightCenter}`}
+          />
+        </div>
         <div className={styles.shade} />
         <div className={`${styles.wrap} ${styles.heroWrap}`}>
           <div className={styles.heroCopy}>
@@ -116,10 +123,22 @@ export default function BotsHomePage() {
                 className={styles.card}
                 href={`/bots/playbooks/${pb.slug}`}
               >
-                <div
-                  className={`${styles.ph} ${styles.cardPh}`}
-                  data-label="Playbook image"
-                />
+                {pb.image ? (
+                  <div className={styles.cardPh}>
+                    <Image
+                      src={pb.image}
+                      alt={pb.imageAlt ?? ""}
+                      fill
+                      sizes="(max-width: 961px) 100vw, 400px"
+                      className={`${styles.fillImg} ${styles.imgCenter35}`}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={`${styles.ph} ${styles.cardPh}`}
+                    data-label="Playbook image"
+                  />
+                )}
                 <div className={styles.cardBody}>
                   <div className={styles.meta}>
                     <span className={styles.tag}>{pb.category}</span>
@@ -195,10 +214,15 @@ export default function BotsHomePage() {
             </p>
           </div>
           <div className={styles.sponsor}>
-            <div
-              className={`${styles.ph} ${styles.sponsorPh}`}
-              data-label="Logo"
-            />
+            <div className={styles.sponsorPh}>
+              <Image
+                src="/images/bots/sponsor-slot.webp"
+                alt="Placeholder art: a robot hand resting on a tool crate"
+                fill
+                sizes="96px"
+                className={styles.fillImg}
+              />
+            </div>
             <div>
               <span className={styles.sponsorLabel}>
                 Sponsor slot / placeholder

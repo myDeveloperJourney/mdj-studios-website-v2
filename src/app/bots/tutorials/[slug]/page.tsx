@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -74,10 +75,23 @@ export default async function TutorialPage({
           <p>{tutorial.excerpt}</p>
         </div>
 
-        <div
-          className={`${styles.ph} ${styles.tutHeroPh}`}
-          data-label="Article hero image 21:9"
-        />
+        {tutorial.cover ? (
+          <div className={styles.tutHeroPh}>
+            <Image
+              src={tutorial.cover}
+              alt={tutorial.coverAlt ?? ""}
+              fill
+              priority
+              sizes="(max-width: 961px) 100vw, 1200px"
+              className={`${styles.fillImg} ${styles.imgCenter40}`}
+            />
+          </div>
+        ) : (
+          <div
+            className={`${styles.ph} ${styles.tutHeroPh}`}
+            data-label="Article hero image 21:9"
+          />
+        )}
 
         <div className={`${styles.pbLayout} ${styles.articleLayout}`}>
           <nav className={styles.toc} aria-label="Contents">

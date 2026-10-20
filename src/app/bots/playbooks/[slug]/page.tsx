@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -57,10 +58,22 @@ function RelatedCard({
 }) {
   return (
     <Link className={styles.card} href={`/bots/playbooks/${pb.slug}`}>
-      <div
-        className={`${styles.ph} ${styles.cardPh}`}
-        data-label="Playbook image"
-      />
+      {pb.image ? (
+        <div className={styles.cardPh}>
+          <Image
+            src={pb.image}
+            alt={pb.imageAlt ?? ""}
+            fill
+            sizes="(max-width: 961px) 100vw, 400px"
+            className={`${styles.fillImg} ${styles.imgCenter35}`}
+          />
+        </div>
+      ) : (
+        <div
+          className={`${styles.ph} ${styles.cardPh}`}
+          data-label="Playbook image"
+        />
+      )}
       <div className={styles.cardBody}>
         <div className={styles.meta}>
           <span className={styles.tag}>{pb.category}</span>
@@ -126,10 +139,23 @@ export default async function PlaybookPage({
               </Link>
             </div>
           </div>
-          <div
-            className={styles.ph}
-            data-label="Playbook illustration 4:3"
-          />
+          {playbook.image ? (
+            <div className={styles.pbHeroPh}>
+              <Image
+                src={playbook.image}
+                alt={playbook.imageAlt ?? ""}
+                fill
+                priority
+                sizes="(max-width: 961px) 100vw, 560px"
+                className={styles.fillImg}
+              />
+            </div>
+          ) : (
+            <div
+              className={styles.ph}
+              data-label="Playbook illustration 4:3"
+            />
+          )}
         </div>
 
         <div className={styles.facts}>

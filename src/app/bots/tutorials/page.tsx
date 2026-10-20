@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllTutorials } from "@/lib/bots";
 import styles from "../bots.module.css";
@@ -43,10 +44,22 @@ export default function TutorialsPage() {
             href={`/bots/tutorials/${featured.slug}`}
             className={styles.featuredTut}
           >
-            <div
-              className={`${styles.ph} ${styles.featuredTutPh}`}
-              data-label="Tutorial cover 16:9"
-            />
+            {featured.cover ? (
+              <div className={styles.featuredTutPh}>
+                <Image
+                  src={featured.cover}
+                  alt={featured.coverAlt ?? ""}
+                  fill
+                  sizes="(max-width: 961px) 100vw, 700px"
+                  className={styles.fillImg}
+                />
+              </div>
+            ) : (
+              <div
+                className={`${styles.ph} ${styles.featuredTutPh}`}
+                data-label="Tutorial cover 16:9"
+              />
+            )}
             <div className={styles.featuredTutBody}>
               <span className={styles.eyebrow}>
                 Start here / Tutorial 01

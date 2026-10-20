@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import type { PlaybookCategory, PlaybookMeta } from "@/lib/bots";
 import styles from "@/app/bots/bots.module.css";
@@ -104,10 +105,22 @@ export default function PlaybookDirectory({
                 className={styles.card}
                 href={`/bots/playbooks/${pb.slug}`}
               >
-                <div
-                  className={`${styles.ph} ${styles.cardPh}`}
-                  data-label="Playbook image"
-                />
+                {pb.image ? (
+                  <div className={styles.cardPh}>
+                    <Image
+                      src={pb.image}
+                      alt={pb.imageAlt ?? ""}
+                      fill
+                      sizes="(max-width: 961px) 100vw, 400px"
+                      className={`${styles.fillImg} ${styles.imgCenter35}`}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={`${styles.ph} ${styles.cardPh}`}
+                    data-label="Playbook image"
+                  />
+                )}
                 <div className={styles.cardBody}>
                   <div className={styles.meta}>
                     <span className={styles.tag}>{pb.category}</span>
