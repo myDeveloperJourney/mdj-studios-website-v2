@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import HideOnBots from "@/components/layout/HideOnBots";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -288,11 +289,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <Navbar />
+        <HideOnBots>
+          <Navbar />
+        </HideOnBots>
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
-        <Footer />
+        <HideOnBots>
+          <Footer />
+        </HideOnBots>
 
-        <ChatWidget />
+        <HideOnBots>
+          <ChatWidget />
+        </HideOnBots>
 
         <Analytics />
         <SpeedInsights />

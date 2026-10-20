@@ -7,14 +7,27 @@ import { usePathname } from "next/navigation";
 // import ThemeToggle from "@/components/ui/ThemeToggle";
 import SocialLinks from "@/components/ui/SocialLinks";
 import Button from "@/components/ui/Button";
+import { BOTS_LAUNCHED } from "@/lib/bots-launch";
 
-const navLinks = [
+type NavLink = { label: string; href: string };
+
+const baseLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Articles", href: "/articles" },
-  { label: "About Daniel", href: "/about" },
 ];
+
+const aboutLink: NavLink = { label: "About Daniel", href: "/about" };
+
+function botsNavExtra(): NavLink[] {
+  if (BOTS_LAUNCHED) {
+    return [{ label: "Bot Bay", href: "/bots" }];
+  }
+  return [];
+}
+
+const navLinks: NavLink[] = [...baseLinks, ...botsNavExtra(), aboutLink];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);

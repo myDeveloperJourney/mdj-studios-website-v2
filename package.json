@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:bots": "node --experimental-strip-types --no-warnings --test src/lib/beehiiv.test.mjs"
   },
   "dependencies": {
     "@googleapis/sheets": "^13.0.1",
